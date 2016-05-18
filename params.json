@@ -1,0 +1,6 @@
+{
+  "name": "SharpVk",
+  "tagline": "C#/.NET Bindings for the Vulkan API",
+  "body": "# SharpVk\r\nC#/.NET Bindings for the Vulkan API\r\n\r\n[![Build status](https://ci.appveyor.com/api/projects/status/6i4r9ghsx4r62nkt?svg=true)](https://ci.appveyor.com/project/FacticiusVir/sharpvk)\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
