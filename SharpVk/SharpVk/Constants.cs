@@ -599,18 +599,7 @@ namespace SharpVk
 
         private static Version ExtractBindingVersion()
         {
-            var versionAttribute = typeof(Version).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>();
-            string versionString = versionAttribute.InformationalVersion;
-
-            int firstDecimalIndex = versionString.IndexOf('.');
-            int secondDecimalIndex = versionString.IndexOf('.', firstDecimalIndex + 1);
-            int terminatorIndex = versionString.Skip(secondDecimalIndex + 1).TakeWhile(char.IsDigit).Count() + secondDecimalIndex + 1;
-
-            int major = int.Parse(versionString.Substring(0, firstDecimalIndex));
-            int minor = int.Parse(versionString.Substring(firstDecimalIndex + 1, (secondDecimalIndex - firstDecimalIndex) - 1));
-            int patch = int.Parse(versionString.Substring(secondDecimalIndex + 1, (terminatorIndex - secondDecimalIndex) - 1));
-
-            return new Version(major, minor, patch);
+            return new Version(0, 2, 4);
         }
 
 	}
