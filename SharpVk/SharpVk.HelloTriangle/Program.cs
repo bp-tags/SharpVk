@@ -183,20 +183,20 @@ namespace SharpVk.HelloTriangle
             this.swapChain = null;
 
             this.device.Dispose();
-            this.renderFinishedSemaphore = null;
+            this.device = null;
 
             this.surface.Dispose();
-            this.renderFinishedSemaphore = null;
+            this.surface = null;
 
             this.instance.Dispose();
-            this.renderFinishedSemaphore = null;
+            this.instance = null;
         }
 
         private void DrawFrame()
         {
             uint nextImage = this.swapChain.AcquireNextImage(uint.MaxValue, this.imageAvailableSemaphore, null);
 
-            graphicsQueue.Submit(new SubmitInfo[]
+            this.graphicsQueue.Submit(new SubmitInfo[]
             {
                 new SubmitInfo
                 {
@@ -207,7 +207,7 @@ namespace SharpVk.HelloTriangle
                 }
             }, null);
 
-            graphicsQueue.Present(new PresentInfo
+            this.presentQueue.Present(new PresentInfo
             {
                 ImageIndices = new uint[] { nextImage },
                 Results = new Result[1],
@@ -292,7 +292,7 @@ namespace SharpVk.HelloTriangle
                 Surface = surface,
                 Flags = SwapchainCreateFlags.None,
                 PresentMode = this.ChooseSwapPresentMode(swapChainSupport.PresentModes),
-                MinImageCount = 2,
+                MinImageCount = imageCount,
                 ImageExtent = extent,
                 ImageUsage = ImageUsageFlags.ColorAttachment,
                 PreTransform = swapChainSupport.Capabilities.CurrentTransform,
@@ -376,6 +376,15 @@ namespace SharpVk.HelloTriangle
                         {
                             SourceSubpass = Constants.SubpassExternal,
                             DestinationSubpass = 0,
+                            SourceStageMask = PipelineStageFlags.BottomOfPipe,
+                            SourceAccessMask = AccessFlags.MemoryRead,
+                            DestinationStageMask = PipelineStageFlags.ColorAttachmentOutput,
+                            DestinationAccessMask = AccessFlags.ColorAttachmentRead | AccessFlags.ColorAttachmentWrite
+                        },
+                        new SubpassDependency
+                        {
+                            SourceSubpass = 0,
+                            DestinationSubpass = Constants.SubpassExternal,
                             SourceStageMask = PipelineStageFlags.BottomOfPipe,
                             SourceAccessMask = AccessFlags.MemoryRead,
                             DestinationStageMask = PipelineStageFlags.ColorAttachmentOutput,
