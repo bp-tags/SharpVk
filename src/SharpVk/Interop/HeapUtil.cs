@@ -37,6 +37,11 @@ namespace SharpVk.Interop
 
         internal static IntPtr Allocate<T>(uint count = 1)
         {
+            if (count == 0)
+            {
+                return IntPtr.Zero;
+            }
+
             uint requiredSize = SizeOfCache<T>.Value * (uint)count;
 
             uint tailBytes = requiredSize % (uint)IntPtr.Size;
