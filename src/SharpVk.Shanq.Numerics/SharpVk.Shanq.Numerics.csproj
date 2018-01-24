@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.4.1</Version>
+    <Version>0.4.3-dev</Version>
     <Authors>FacticiusVir</Authors>
     <Company>FacticiusVir</Company>
     <Description>System.Numerics type mappings for SharpVk Shanq.</Description>
