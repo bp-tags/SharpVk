@@ -5,14 +5,14 @@ namespace SharpVk.Shanq.Numerics
 {
     public static class DeviceExtensions
     {
-        public static ShaderModule CreateVertexModule<TOutput>(this Device device, Func<IShanqFactory, IQueryable<TOutput>> shaderFunction)
+        public static ShaderModule CreateVertexModule<TOutput>(this Device device, Func<IShanqFactory, IQueryable<TOutput>> shaderFunction, string entryPointName = ShanqShader.DefaultModuleEntryPoint)
         {
-            return ShanqShader.CreateVertexModule(device, VectorTypeLibrary.Instance, shaderFunction);
+            return ShanqShader.CreateVertexModule(device, VectorTypeLibrary.Instance, shaderFunction, entryPointName);
         }
 
-        public static ShaderModule CreateFragmentModule<TOutput>(this Device device, Func<IShanqFactory, IQueryable<TOutput>> shaderFunction)
+        public static ShaderModule CreateFragmentModule<TOutput>(this Device device, Func<IShanqFactory, IQueryable<TOutput>> shaderFunction, string entryPointName = ShanqShader.DefaultModuleEntryPoint)
         {
-            return ShanqShader.CreateFragmentModule(device, VectorTypeLibrary.Instance, shaderFunction);
+            return ShanqShader.CreateFragmentModule(device, VectorTypeLibrary.Instance, shaderFunction, entryPointName);
         }
     }
 }

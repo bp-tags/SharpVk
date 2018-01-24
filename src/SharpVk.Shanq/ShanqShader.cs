@@ -20,9 +20,9 @@ namespace SharpVk.Shanq
     {
         private readonly ShanqQueryExecutor executor;
 
-        public ShanqFactory(ExecutionModel model, Stream outputStream, IVectorTypeLibrary vectorLibrary)
+        public ShanqFactory(ExecutionModel model, Stream outputStream, IVectorTypeLibrary vectorLibrary, string entryPointName)
         {
-            this.executor = new ShanqQueryExecutor(model, outputStream, vectorLibrary);
+            this.executor = new ShanqQueryExecutor(model, outputStream, vectorLibrary, entryPointName);
         }
 
         public IQueryable<T> GetBinding<T>(int binding)
@@ -43,29 +43,36 @@ namespace SharpVk.Shanq
 
     public static class ShanqShader
     {
-        public static void Create<TOutput>(ExecutionModel model, Stream outputStream, IVectorTypeLibrary vectorLibrary, Func<IShanqFactory, IQueryable<TOutput>> shaderFunction)
+        public const string DefaultModuleEntryPoint = "main";
+
+        public static void Create<TOutput>(ExecutionModel model, Stream outputStream, IVectorTypeLibrary vectorLibrary, Func<IShanqFactory, IQueryable<TOutput>> shaderFunction, string entryPointName = DefaultModuleEntryPoint)
         {
-            var factory = new ShanqFactory(model, outputStream, vectorLibrary);
+            var factory = new ShanqFactory(model, outputStream, vectorLibrary, entryPointName);
 
             shaderFunction(factory).ToArray();
         }
 
-        public static void CreateFragment<TOutput>(Stream outputStream, IVectorTypeLibrary vectorLibrary, Func<IShanqFactory, IQueryable<TOutput>> shaderFunction)
+        public static void CreateVertex<TOutput>(Stream outputStream, IVectorTypeLibrary vectorLibrary, Func<IShanqFactory, IQueryable<TOutput>> shaderFunction, string entryPointName = DefaultModuleEntryPoint)
+        {
+            Create(ExecutionModel.Vertex, outputStream, vectorLibrary, shaderFunction);
+        }
+
+        public static void CreateFragment<TOutput>(Stream outputStream, IVectorTypeLibrary vectorLibrary, Func<IShanqFactory, IQueryable<TOutput>> shaderFunction, string entryPointName = DefaultModuleEntryPoint)
         {
             Create(ExecutionModel.Fragment, outputStream, vectorLibrary, shaderFunction);
         }
 
-        public static ShaderModule CreateVertexModule<TOutput>(Device device, IVectorTypeLibrary vectorLibrary, Func<IShanqFactory, IQueryable<TOutput>> shaderFunction)
+        public static ShaderModule CreateVertexModule<TOutput>(Device device, IVectorTypeLibrary vectorLibrary, Func<IShanqFactory, IQueryable<TOutput>> shaderFunction, string entryPointName = DefaultModuleEntryPoint)
         {
             return CreateModule(device, vectorLibrary, ExecutionModel.Vertex, shaderFunction);
         }
 
-        public static ShaderModule CreateFragmentModule<TOutput>(Device device, IVectorTypeLibrary vectorLibrary, Func<IShanqFactory, IQueryable<TOutput>> shaderFunction)
+        public static ShaderModule CreateFragmentModule<TOutput>(Device device, IVectorTypeLibrary vectorLibrary, Func<IShanqFactory, IQueryable<TOutput>> shaderFunction, string entryPointName = DefaultModuleEntryPoint)
         {
             return CreateModule(device, vectorLibrary, ExecutionModel.Fragment, shaderFunction);
         }
 
-        private static ShaderModule CreateModule<TOutput>(Device device, IVectorTypeLibrary vectorLibrary, ExecutionModel model, Func<IShanqFactory, IQueryable<TOutput>> shaderFunction)
+        private static ShaderModule CreateModule<TOutput>(Device device, IVectorTypeLibrary vectorLibrary, ExecutionModel model, Func<IShanqFactory, IQueryable<TOutput>> shaderFunction, string entryPointName = DefaultModuleEntryPoint)
         {
             var shaderStream = new MemoryStream();
 

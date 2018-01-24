@@ -17,12 +17,14 @@ namespace SharpVk.Shanq
         private readonly ExecutionModel model;
         private readonly Stream outputStream;
         private readonly IVectorTypeLibrary vectorLibrary;
+        private readonly string entryPointName;
 
-        public ShanqQueryExecutor(ExecutionModel model, Stream outputStream, IVectorTypeLibrary vectorLibrary)
+        public ShanqQueryExecutor(ExecutionModel model, Stream outputStream, IVectorTypeLibrary vectorLibrary, string entryPointName)
         {
             this.model = model;
             this.outputStream = outputStream;
             this.vectorLibrary = vectorLibrary;
+            this.entryPointName = entryPointName;
         }
 
         public IEnumerable<T> ExecuteCollection<T>(QueryModel queryModel)
@@ -191,7 +193,7 @@ namespace SharpVk.Shanq
                 entryPointParameters.Add(outputVariableId);
             }
 
-            file.AddHeaderStatement(Op.OpEntryPoint, new object[] { this.model, entryPointerFunctionId, "main" }.Concat(entryPointParameters.Cast<object>()).ToArray());
+            file.AddHeaderStatement(Op.OpEntryPoint, new object[] { this.model, entryPointerFunctionId, this.entryPointName }.Concat(entryPointParameters.Cast<object>()).ToArray());
             if (this.model == ExecutionModel.Fragment)
             {
                 executionModes.Add(ExecutionMode.OriginUpperLeft);
