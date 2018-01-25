@@ -60,7 +60,7 @@ namespace SharpVk.Interop
         /// enable only applies to indexed draws (flink:vkCmdDrawIndexed and
         /// flink:vkCmdDrawIndexedIndirect), and the special index value is
         /// either 0xFFFFFFFF when the indexType parameter of
-        /// fname:vkCmdBindIndexBuffer is equal to VK_INDEX_TYPE_UINT32, or
+        /// CommandBuffer.BindIndexBuffer is equal to VK_INDEX_TYPE_UINT32, or
         /// 0xFFFF when indexType is equal to VK_INDEX_TYPE_UINT16. Primitive
         /// restart is not allowed for "`list`" topologies.
         /// </summary>

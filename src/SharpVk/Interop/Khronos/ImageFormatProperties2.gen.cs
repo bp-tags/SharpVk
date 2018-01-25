@@ -44,7 +44,7 @@ namespace SharpVk.Interop.Khronos
         public void* Next; 
         
         /// <summary>
-        /// An instance of a ImageFormatProperties structure in which
+        /// An instance of an ImageFormatProperties structure in which
         /// capabilities are returned.
         /// </summary>
         public SharpVk.ImageFormatProperties ImageFormatProperties; 

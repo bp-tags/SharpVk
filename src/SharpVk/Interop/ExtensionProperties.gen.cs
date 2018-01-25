@@ -34,7 +34,7 @@ namespace SharpVk.Interop
     public unsafe partial struct ExtensionProperties
     {
         /// <summary>
-        /// A null-terminated string specifying the name of the extension.
+        /// A string specifying the name of the extension.
         /// </summary>
         public fixed byte ExtensionName[Constants.MaxExtensionNameSize]; 
         

@@ -49,15 +49,13 @@ namespace SharpVk.Interop
         public SharpVk.DeviceCreateFlags Flags; 
         
         /// <summary>
-        /// The unsigned integer size of the pQueueCreateInfos array. Refer to
-        /// the Queue Creation section below for further details.
+        /// The unsigned integer size of the pQueueCreateInfos array.
         /// </summary>
         public uint QueueCreateInfoCount; 
         
         /// <summary>
         /// An array of DeviceQueueCreateInfo structures describing the queues
         /// that are requested to be created along with the logical device.
-        /// Refer to the Queue Creation section below for further details.
         /// </summary>
         public SharpVk.Interop.DeviceQueueCreateInfo* QueueCreateInfos; 
         
@@ -67,8 +65,7 @@ namespace SharpVk.Interop
         public uint EnabledLayerCount; 
         
         /// <summary>
-        /// ppEnabledLayerNames is deprecated and ignored. See Device Layer
-        /// Deprecation.
+        /// ppEnabledLayerNames is deprecated and ignored.
         /// </summary>
         public byte** EnabledLayerNames; 
         
@@ -79,15 +76,13 @@ namespace SharpVk.Interop
         
         /// <summary>
         /// An array of enabledExtensionCount strings containing the names of
-        /// extensions to enable for the created device. See the Extensions
-        /// section for further details.
+        /// extensions to enable for the created device.
         /// </summary>
         public byte** EnabledExtensionNames; 
         
         /// <summary>
         /// Null or a PhysicalDeviceFeatures structure that contains boolean
-        /// indicators of all the features to be enabled. Refer to the Features
-        /// section for further details.
+        /// indicators of all the features to be enabled.
         /// </summary>
         public SharpVk.Interop.PhysicalDeviceFeatures* EnabledFeatures; 
     }

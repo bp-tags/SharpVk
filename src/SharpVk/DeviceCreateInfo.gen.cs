@@ -45,7 +45,6 @@ namespace SharpVk
         /// <summary>
         /// An array of DeviceQueueCreateInfo structures describing the queues
         /// that are requested to be created along with the logical device.
-        /// Refer to the Queue Creation section below for further details.
         /// </summary>
         public SharpVk.DeviceQueueCreateInfo[] QueueCreateInfos
         {
@@ -54,8 +53,7 @@ namespace SharpVk
         }
         
         /// <summary>
-        /// ppEnabledLayerNames is deprecated and ignored. See Device Layer
-        /// Deprecation.
+        /// ppEnabledLayerNames is deprecated and ignored.
         /// </summary>
         public ArrayProxy<string> EnabledLayerNames
         {
@@ -65,8 +63,7 @@ namespace SharpVk
         
         /// <summary>
         /// An array of enabledExtensionCount strings containing the names of
-        /// extensions to enable for the created device. See the Extensions
-        /// section for further details.
+        /// extensions to enable for the created device.
         /// </summary>
         public ArrayProxy<string> EnabledExtensionNames
         {
@@ -76,8 +73,7 @@ namespace SharpVk
         
         /// <summary>
         /// Null or a PhysicalDeviceFeatures structure that contains boolean
-        /// indicators of all the features to be enabled. Refer to the Features
-        /// section for further details.
+        /// indicators of all the features to be enabled.
         /// </summary>
         public SharpVk.PhysicalDeviceFeatures? EnabledFeatures
         {

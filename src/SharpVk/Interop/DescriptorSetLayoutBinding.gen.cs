@@ -69,8 +69,8 @@ namespace SharpVk.Interop
         
         /// <summary>
         /// pImmutableSamplers affects initialization of samplers. If
-        /// descriptorType specifies a VK_DESCRIPTOR_TYPE_SAMPLER or
-        /// VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER type descriptor, then
+        /// descriptorType specifies a DescriptorType.Sampler or
+        /// DescriptorType.CombinedImageSampler type descriptor, then
         /// pImmutableSamplers can be used to initialize a set of _immutable
         /// samplers_. Immutable samplers are permanently bound into the set
         /// layout; later binding a sampler into an immutable sampler slot in a

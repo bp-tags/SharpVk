@@ -206,18 +206,15 @@ namespace SharpVk
         /// <param name="queueCreateInfos">
         /// </param>
         /// <param name="enabledLayerNames">
-        /// ppEnabledLayerNames is deprecated and ignored. See Device Layer
-        /// Deprecation.
+        /// ppEnabledLayerNames is deprecated and ignored.
         /// </param>
         /// <param name="enabledExtensionNames">
         /// An array of enabledExtensionCount strings containing the names of
-        /// extensions to enable for the created device. See the Extensions
-        /// section for further details.
+        /// extensions to enable for the created device.
         /// </param>
         /// <param name="enabledFeatures">
         /// Null or a PhysicalDeviceFeatures structure that contains boolean
-        /// indicators of all the features to be enabled. Refer to the Features
-        /// section for further details.
+        /// indicators of all the features to be enabled.
         /// </param>
         /// <param name="physicalDeviceFeatures2Khr">
         /// Extension struct

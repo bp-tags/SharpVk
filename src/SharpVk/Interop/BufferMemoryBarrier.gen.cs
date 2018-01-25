@@ -78,8 +78,8 @@ namespace SharpVk.Interop
         
         /// <summary>
         /// A size in bytes of the affected area of backing memory for buffer,
-        /// or VK_WHOLE_SIZE to use the range from offset to the end of the
-        /// buffer.
+        /// or Constants.WholeSize to use the range from offset to the end of
+        /// the buffer.
         /// </summary>
         public DeviceSize Size; 
     }

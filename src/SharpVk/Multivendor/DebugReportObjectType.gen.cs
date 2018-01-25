@@ -80,7 +80,7 @@ namespace SharpVk.Multivendor
         Buffer = 9, 
         
         /// <summary>
-        /// A Image.
+        /// An Image.
         /// </summary>
         Image = 10, 
         
@@ -100,7 +100,7 @@ namespace SharpVk.Multivendor
         BufferView = 13, 
         
         /// <summary>
-        /// A ImageView.
+        /// An ImageView.
         /// </summary>
         ImageView = 14, 
         

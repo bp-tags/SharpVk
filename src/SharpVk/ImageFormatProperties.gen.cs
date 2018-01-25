@@ -53,10 +53,10 @@ namespace SharpVk
         
         /// <summary>
         /// The maximum number of mipmap levels. maxMipLevels must either be
-        /// equal to 1 (valid only if tiling is VK_IMAGE_TILING_LINEAR) or be
-        /// equal to [eq]#{lceil}log~2~(max(width, height, depth)){rceil}
-        /// {plus} 1#. [eq]#width#, [eq]#height#, and [eq]#depth# are taken
-        /// from the corresponding members of maxExtent.
+        /// equal to 1 (valid only if tiling is ImageTiling.Linear) or be equal
+        /// to [eq]#{lceil}log~2~(max(width, height, depth)){rceil} {plus} 1#.
+        /// [eq]#width#, [eq]#height#, and [eq]#depth# are taken from the
+        /// corresponding members of maxExtent.
         /// </summary>
         public uint MaxMipLevels; 
         
@@ -64,7 +64,7 @@ namespace SharpVk
         /// The maximum number of array layers. maxArrayLayers must either be
         /// equal to 1 or be greater than or equal to the maxImageArrayLayers
         /// member of PhysicalDeviceLimits. A value of 1 is valid only if
-        /// tiling is VK_IMAGE_TILING_LINEAR or if type is VK_IMAGE_TYPE_3D.
+        /// tiling is ImageTiling.Linear or if type is VK_IMAGE_TYPE_3D.
         /// </summary>
         public uint MaxArrayLayers; 
         

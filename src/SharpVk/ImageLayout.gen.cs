@@ -30,43 +30,42 @@ namespace SharpVk
     public enum ImageLayout
     {
         /// <summary>
-        /// VK_IMAGE_LAYOUT_UNDEFINED: Supports no device access. This layout
-        /// must only be used as the initialLayout member of ImageCreateInfo or
-        /// AttachmentDescription, or as the oldLayout in an image transition.
-        /// When transitioning out of this layout, the contents of the memory
-        /// are not guaranteed to be preserved.
+        /// Supports no device access. This layout must only be used as the
+        /// initialLayout member of ImageCreateInfo or AttachmentDescription,
+        /// or as the oldLayout in an image transition. When transitioning out
+        /// of this layout, the contents of the memory are not guaranteed to be
+        /// preserved.
         /// </summary>
         Undefined = 0, 
         
         /// <summary>
-        /// VK_IMAGE_LAYOUT_GENERAL: Supports all types of device access.
+        /// Supports all types of device access.
         /// </summary>
         General = 1, 
         
         /// <summary>
-        /// VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL: must only be used as a
-        /// color or resolve attachment in a Framebuffer. This layout is valid
-        /// only for image subresources of images created with the
-        /// VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT usage bit enabled.
+        /// Must only be used as a color or resolve attachment in a
+        /// Framebuffer. This layout is valid only for image subresources of
+        /// images created with the VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT usage
+        /// bit enabled.
         /// </summary>
         ColorAttachmentOptimal = 2, 
         
         /// <summary>
-        /// VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL: must only be used
-        /// as a depth/stencil attachment in a Framebuffer. This layout is
-        /// valid only for image subresources of images created with the
-        /// VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT usage bit enabled.
+        /// Must only be used as a depth/stencil attachment in a Framebuffer.
+        /// This layout is valid only for image subresources of images created
+        /// with the VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT usage bit
+        /// enabled.
         /// </summary>
         DepthStencilAttachmentOptimal = 3, 
         
         /// <summary>
-        /// VK_IMAGE_LAYOUT_DEPTH_STENCIL_READ_ONLY_OPTIMAL: must only be used
-        /// as a read-only depth/stencil attachment in a Framebuffer and/or as
-        /// a read-only image in a shader (which can be read as a sampled
-        /// image, combined image/sampler and/or input attachment). This layout
-        /// is valid only for image subresources of images created with the
-        /// VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT usage bit enabled. Only
-        /// image subresources of images created with
+        /// Must only be used as a read-only depth/stencil attachment in a
+        /// Framebuffer and/or as a read-only image in a shader (which can be
+        /// read as a sampled image, combined image/sampler and/or input
+        /// attachment). This layout is valid only for image subresources of
+        /// images created with the VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT
+        /// usage bit enabled. Only image subresources of images created with
         /// VK_IMAGE_USAGE_SAMPLED_BIT can be used as sampled image or combined
         /// image/sampler in a shader. Similarly, only image subresources of
         /// images created with VK_IMAGE_USAGE_INPUT_ATTACHMENT_BIT can be used
@@ -75,53 +74,48 @@ namespace SharpVk
         DepthStencilReadOnlyOptimal = 4, 
         
         /// <summary>
-        /// VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL: must only be used as a
-        /// read-only image in a shader (which can be read as a sampled image,
-        /// combined image/sampler and/or input attachment). This layout is
-        /// valid only for image subresources of images created with the
-        /// VK_IMAGE_USAGE_SAMPLED_BIT or VK_IMAGE_USAGE_INPUT_ATTACHMENT_BIT
-        /// usage bit enabled.
+        /// Must only be used as a read-only image in a shader (which can be
+        /// read as a sampled image, combined image/sampler and/or input
+        /// attachment). This layout is valid only for image subresources of
+        /// images created with the VK_IMAGE_USAGE_SAMPLED_BIT or
+        /// VK_IMAGE_USAGE_INPUT_ATTACHMENT_BIT usage bit enabled.
         /// </summary>
         ShaderReadOnlyOptimal = 5, 
         
         /// <summary>
-        /// VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL: must only be used as a source
-        /// image of a transfer command (see the definition of
-        /// VK_PIPELINE_STAGE_TRANSFER_BIT). This layout is valid only for
-        /// image subresources of images created with the
+        /// Must only be used as a source image of a transfer command (see the
+        /// definition of VK_PIPELINE_STAGE_TRANSFER_BIT). This layout is valid
+        /// only for image subresources of images created with the
         /// VK_IMAGE_USAGE_TRANSFER_SRC_BIT usage bit enabled.
         /// </summary>
         TransferSourceOptimal = 6, 
         
         /// <summary>
-        /// VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL: must only be used as a
-        /// destination image of a transfer command. This layout is valid only
-        /// for image subresources of images created with the
-        /// VK_IMAGE_USAGE_TRANSFER_DST_BIT usage bit enabled.
+        /// Must only be used as a destination image of a transfer command.
+        /// This layout is valid only for image subresources of images created
+        /// with the VK_IMAGE_USAGE_TRANSFER_DST_BIT usage bit enabled.
         /// </summary>
         TransferDestinationOptimal = 7, 
         
         /// <summary>
-        /// VK_IMAGE_LAYOUT_PREINITIALIZED: Supports no device access. This
-        /// layout must only be used as the initialLayout member of
-        /// ImageCreateInfo or AttachmentDescription, or as the oldLayout in an
-        /// image transition. When transitioning out of this layout, the
-        /// contents of the memory are preserved. This layout is intended to be
-        /// used as the initial layout for an image whose contents are written
-        /// by the host, and hence the data can be written to memory
-        /// immediately, without first executing a layout transition.
-        /// Currently, VK_IMAGE_LAYOUT_PREINITIALIZED is only useful with
-        /// VK_IMAGE_TILING_LINEAR images because there is not a standard
-        /// layout defined for VK_IMAGE_TILING_OPTIMAL images.
+        /// Supports no device access. This layout must only be used as the
+        /// initialLayout member of ImageCreateInfo or AttachmentDescription,
+        /// or as the oldLayout in an image transition. When transitioning out
+        /// of this layout, the contents of the memory are preserved. This
+        /// layout is intended to be used as the initial layout for an image
+        /// whose contents are written by the host, and hence the data can be
+        /// written to memory immediately, without first executing a layout
+        /// transition. Currently, VK_IMAGE_LAYOUT_PREINITIALIZED is only
+        /// useful with ImageTiling.Linear images because there is not a
+        /// standard layout defined for ImageTiling.Optimal images.
         /// </summary>
         Preinitialized = 8, 
         
         /// <summary>
-        /// VK_IMAGE_LAYOUT_PRESENT_SRC_KHR: must only be used for presenting a
-        /// presentable image for display. A swapchain's image must be
-        /// transitioned to this layout before calling flink:vkQueuePresentKHR,
-        /// and must be transitioned away from this layout after calling
-        /// flink:vkAcquireNextImageKHR.
+        /// Must only be used for presenting a presentable image for display. A
+        /// swapchain's image must be transitioned to this layout before
+        /// calling flink:vkQueuePresentKHR, and must be transitioned away from
+        /// this layout after calling flink:vkAcquireNextImageKHR.
         /// </summary>
         PresentSource = 1000001002, 
         

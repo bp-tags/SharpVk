@@ -67,10 +67,10 @@ namespace SharpVk.Interop
         
         /// <summary>
         /// A size in bytes of the buffer view. If range is equal to
-        /// VK_WHOLE_SIZE, the range from offset to the end of the buffer is
-        /// used. If VK_WHOLE_SIZE is used and the remaining size of the buffer
-        /// is not a multiple of the element size of format, then the nearest
-        /// smaller multiple is used.
+        /// Constants.WholeSize, the range from offset to the end of the buffer
+        /// is used. If Constants.WholeSize is used and the remaining size of
+        /// the buffer is not a multiple of the element size of format, then
+        /// the nearest smaller multiple is used.
         /// </summary>
         public DeviceSize Range; 
     }

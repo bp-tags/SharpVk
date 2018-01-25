@@ -30,47 +30,45 @@ namespace SharpVk
     public enum StencilOp
     {
         /// <summary>
-        /// VK_STENCIL_OP_KEEP keeps the current value.
+        /// Keeps the current value.
         /// </summary>
         Keep = 0, 
         
         /// <summary>
-        /// VK_STENCIL_OP_ZERO sets the value to 0.
+        /// Sets the value to 0.
         /// </summary>
         Zero = 1, 
         
         /// <summary>
-        /// VK_STENCIL_OP_REPLACE sets the value to reference.
+        /// Sets the value to reference.
         /// </summary>
         Replace = 2, 
         
         /// <summary>
-        /// VK_STENCIL_OP_INCREMENT_AND_CLAMP increments the current value and
-        /// clamps to the maximum representable unsigned value.
+        /// Increments the current value and clamps to the maximum
+        /// representable unsigned value.
         /// </summary>
         IncrementAndClamp = 3, 
         
         /// <summary>
-        /// VK_STENCIL_OP_DECREMENT_AND_CLAMP decrements the current value and
-        /// clamps to 0.
+        /// decrements the current value and clamps to 0.
         /// </summary>
         DecrementAndClamp = 4, 
         
         /// <summary>
-        /// VK_STENCIL_OP_INVERT bitwise-inverts the current value.
+        /// Bitwise-inverts the current value.
         /// </summary>
         Invert = 5, 
         
         /// <summary>
-        /// VK_STENCIL_OP_INCREMENT_AND_WRAP increments the current value and
-        /// wraps to 0 when the maximum value would have been exceeded.
+        /// Increments the current value and wraps to 0 when the maximum value
+        /// would have been exceeded.
         /// </summary>
         IncrementAndWrap = 6, 
         
         /// <summary>
-        /// VK_STENCIL_OP_DECREMENT_AND_WRAP decrements the current value and
-        /// wraps to the maximum possible value when the value would go below
-        /// 0.
+        /// Decrements the current value and wraps to the maximum possible
+        /// value when the value would go below 0.
         /// </summary>
         DecrementAndWrap = 7, 
     }

@@ -68,8 +68,7 @@ namespace SharpVk.Interop
         
         /// <summary>
         /// An instance of the PipelineInputAssemblyStateCreateInfo structure
-        /// which determines input assembly behavior, as described in Drawing
-        /// Commands.
+        /// which determines input assembly behavior.
         /// </summary>
         public SharpVk.Interop.PipelineInputAssemblyStateCreateInfo* InputAssemblyState; 
         
@@ -131,7 +130,7 @@ namespace SharpVk.Interop
         /// A handle to a render pass object describing the environment in
         /// which the pipeline will be used; the pipeline must only be used
         /// with an instance of any render pass compatible with the one
-        /// provided. See Render Pass Compatibility for more information.
+        /// provided.
         /// </summary>
         public SharpVk.Interop.RenderPass RenderPass; 
         

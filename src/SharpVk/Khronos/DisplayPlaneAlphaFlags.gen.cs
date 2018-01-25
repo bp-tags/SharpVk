@@ -41,8 +41,8 @@ namespace SharpVk.Khronos
         Opaque = 1 << 0, 
         
         /// <summary>
-        /// VK_DISPLAY_PLANE_ALPHA_GLOBAL_BIT_KHR: A global alpha value must be
-        /// specified that will be applied to all pixels in the source image.
+        /// A global alpha value must be specified that will be applied to all
+        /// pixels in the source image.
         /// </summary>
         Global = 1 << 1, 
         
@@ -55,9 +55,9 @@ namespace SharpVk.Khronos
         PerPixel = 1 << 2, 
         
         /// <summary>
-        /// This is equivalent to VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_BIT_KHR
-        /// except the source alpha values are assumed to be premultiplied into
-        /// the source image's other color channels.
+        /// This is equivalent to AlphaPerPixel except the source alpha values
+        /// are assumed to be premultiplied into the source image's other color
+        /// channels.
         /// </summary>
         PerPixelPremultiplied = 1 << 3, 
     }

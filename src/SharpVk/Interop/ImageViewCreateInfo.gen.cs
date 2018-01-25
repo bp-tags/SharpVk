@@ -49,7 +49,7 @@ namespace SharpVk.Interop
         public SharpVk.ImageViewCreateFlags Flags; 
         
         /// <summary>
-        /// A Image on which the view will be created.
+        /// An Image on which the view will be created.
         /// </summary>
         public SharpVk.Interop.Image Image; 
         
@@ -67,12 +67,11 @@ namespace SharpVk.Interop
         /// <summary>
         /// Specifies a remapping of color components (or of depth or stencil
         /// components after they have been converted into color components).
-        /// See ComponentMapping.
         /// </summary>
         public SharpVk.ComponentMapping Components; 
         
         /// <summary>
-        /// A ImageSubresourceRange selecting the set of mipmap levels and
+        /// An ImageSubresourceRange selecting the set of mipmap levels and
         /// array layers to be accessible to the view.
         /// </summary>
         public SharpVk.ImageSubresourceRange SubresourceRange; 

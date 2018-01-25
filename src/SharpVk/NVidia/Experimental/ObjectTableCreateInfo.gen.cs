@@ -64,9 +64,9 @@ namespace SharpVk.NVidia.Experimental
         }
         
         /// <summary>
-        /// The maximum number of VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER or
-        /// VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC used by any single
-        /// registered DescriptorSet in this table.
+        /// The maximum number of DescriptorType.UniformBuffer or
+        /// DescriptorType.UniformBufferDynamic used by any single registered
+        /// DescriptorSet in this table.
         /// </summary>
         public uint MaxUniformBuffersPerDescriptor
         {
@@ -75,9 +75,9 @@ namespace SharpVk.NVidia.Experimental
         }
         
         /// <summary>
-        /// The maximum number of VK_DESCRIPTOR_TYPE_STORAGE_BUFFER or
-        /// VK_DESCRIPTOR_TYPE_STORAGE_BUFFER_DYNAMIC used by any single
-        /// registered DescriptorSet in this table.
+        /// The maximum number of DescriptorType.StorageBuffer or
+        /// DescriptorType.StorageBufferDynamic used by any single registered
+        /// DescriptorSet in this table.
         /// </summary>
         public uint MaxStorageBuffersPerDescriptor
         {
@@ -86,9 +86,9 @@ namespace SharpVk.NVidia.Experimental
         }
         
         /// <summary>
-        /// The maximum number of VK_DESCRIPTOR_TYPE_STORAGE_IMAGE or
-        /// VK_DESCRIPTOR_TYPE_STORAGE_TEXEL_BUFFER used by any single
-        /// registered DescriptorSet in this table.
+        /// The maximum number of DescriptorType.StorageImage or
+        /// DescriptorType.StorageTexelBuffer used by any single registered
+        /// DescriptorSet in this table.
         /// </summary>
         public uint MaxStorageImagesPerDescriptor
         {
@@ -97,10 +97,10 @@ namespace SharpVk.NVidia.Experimental
         }
         
         /// <summary>
-        /// The maximum number of VK_DESCRIPTOR_TYPE_SAMPLER,
-        /// VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_DESCRIPTOR_TYPE_UNIFORM_TEXEL_BUFFER
-        /// or VK_DESCRIPTOR_TYPE_INPUT_ATTACHMENT used by any single
-        /// registered DescriptorSet in this table.
+        /// The maximum number of DescriptorType.Sampler,
+        /// DescriptorType.CombinedImageSampler, DescriptorType.UniformTexelBuffer
+        /// or DescriptorType.InputAttachment used by any single registered
+        /// DescriptorSet in this table.
         /// </summary>
         public uint MaxSampledImagesPerDescriptor
         {

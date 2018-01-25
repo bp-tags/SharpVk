@@ -44,7 +44,7 @@ namespace SharpVk.Interop.Khronos.Experimental
         public void* Next; 
         
         /// <summary>
-        /// Zero or is the number of subpasses in the render pass.
+        /// Zero or the number of subpasses in the render pass.
         /// </summary>
         public uint SubpassCount; 
         
@@ -57,8 +57,7 @@ namespace SharpVk.Interop.Khronos.Experimental
         public uint* ViewMasks; 
         
         /// <summary>
-        /// dependencyCount is zero or the number of dependencies in the render
-        /// pass.
+        /// Zero or the number of dependencies in the render pass.
         /// </summary>
         public uint DependencyCount; 
         
@@ -71,7 +70,7 @@ namespace SharpVk.Interop.Khronos.Experimental
         public int* ViewOffsets; 
         
         /// <summary>
-        /// correlationMaskCount is zero or a number of correlation masks.
+        /// Zero or a number of correlation masks.
         /// </summary>
         public uint CorrelationMaskCount; 
         

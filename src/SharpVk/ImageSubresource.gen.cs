@@ -44,17 +44,17 @@ namespace SharpVk
         }
         
         /// <summary>
-        /// A ImageAspectFlags selecting the image _aspect_.
+        /// An ImageAspectFlags selecting the image aspect.
         /// </summary>
         public SharpVk.ImageAspectFlags AspectMask; 
         
         /// <summary>
-        /// mipLevel selects the mipmap level.
+        /// Selects the mipmap level.
         /// </summary>
         public uint MipLevel; 
         
         /// <summary>
-        /// arrayLayer selects the array layer.
+        /// Selects the array layer.
         /// </summary>
         public uint ArrayLayer; 
     }

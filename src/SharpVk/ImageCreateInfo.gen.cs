@@ -44,7 +44,7 @@ namespace SharpVk
         }
         
         /// <summary>
-        /// A ImageType specifying the basic dimensionality of the image, as
+        /// An ImageType specifying the basic dimensionality of the image, as
         /// described below. Layers in array textures do not count as a
         /// dimension for the purposes of the image type.
         /// </summary>
@@ -104,7 +104,7 @@ namespace SharpVk
         }
         
         /// <summary>
-        /// A ImageTiling specifying the tiling arrangement of the data
+        /// An ImageTiling specifying the tiling arrangement of the data
         /// elements in memory, as described below.
         /// </summary>
         public SharpVk.ImageTiling Tiling

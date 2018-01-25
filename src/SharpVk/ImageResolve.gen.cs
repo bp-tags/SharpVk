@@ -46,26 +46,28 @@ namespace SharpVk
         }
         
         /// <summary>
-        /// srcSubresource and dstSubresource are ImageSubresourceLayers
-        /// structures specifying the image subresources of the images used for
-        /// the source and destination image data, respectively. Resolve of
+        /// ImageSubresourceLayer structure specifying the image subresources
+        /// of the images used for the source image data. Resolve of
         /// depth/stencil images is not supported.
         /// </summary>
         public SharpVk.ImageSubresourceLayers SourceSubresource; 
         
         /// <summary>
-        /// srcOffset and dstOffset select the initial x, y, and z offsets in
-        /// texels of the sub-regions of the source and destination image data.
+        /// Select the initial x, y, and z offsets in texels of the sub-regions
+        /// of the source image data.
         /// </summary>
         public SharpVk.Offset3D SourceOffset; 
         
         /// <summary>
-        /// 
+        /// ImageSubresourceLayer structure specifying the image subresources
+        /// of the images used for the destination image data. Resolve of
+        /// depth/stencil images is not supported.
         /// </summary>
         public SharpVk.ImageSubresourceLayers DestinationSubresource; 
         
         /// <summary>
-        /// 
+        /// Select the initial x, y, and z offsets in texels of the sub-regions
+        /// of the destination image data.
         /// </summary>
         public SharpVk.Offset3D DestinationOffset; 
         

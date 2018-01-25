@@ -67,7 +67,7 @@ namespace SharpVk
         public uint BufferImageHeight; 
         
         /// <summary>
-        /// A ImageSubresourceLayers used to specify the specific image
+        /// An ImageSubresourceLayers used to specify the specific image
         /// subresources of the image used for the source or destination image
         /// data.
         /// </summary>

@@ -101,8 +101,8 @@ namespace SharpVk
         /// The maximum value that can be specified in the range member of any
         /// DescriptorBufferInfo structures passed to a call to
         /// flink:vkUpdateDescriptorSets for descriptors of type
-        /// VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER or
-        /// VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC.
+        /// DescriptorType.UniformBuffer or
+        /// DescriptorType.UniformBufferDynamic.
         /// </summary>
         public uint MaxUniformBufferRange
         {
@@ -114,8 +114,8 @@ namespace SharpVk
         /// The maximum value that can be specified in the range member of any
         /// DescriptorBufferInfo structures passed to a call to
         /// flink:vkUpdateDescriptorSets for descriptors of type
-        /// VK_DESCRIPTOR_TYPE_STORAGE_BUFFER or
-        /// VK_DESCRIPTOR_TYPE_STORAGE_BUFFER_DYNAMIC.
+        /// DescriptorType.StorageBuffer or
+        /// DescriptorType.StorageBufferDynamic.
         /// </summary>
         public uint MaxStorageBufferRange
         {
@@ -196,9 +196,9 @@ namespace SharpVk
         /// <summary>
         /// maxPerStageDescriptorSamplers is the maximum number of samplers
         /// that can be accessible to a single shader stage in a pipeline
-        /// layout. Descriptors with a type of VK_DESCRIPTOR_TYPE_SAMPLER or
-        /// VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER count against this limit.
-        /// A descriptor is accessible to a shader stage when the stageFlags
+        /// layout. Descriptors with a type of DescriptorType.Sampler or
+        /// DescriptorType.CombinedImageSampler count against this limit. A
+        /// descriptor is accessible to a shader stage when the stageFlags
         /// member of the DescriptorSetLayoutBinding structure has the bit for
         /// that shader stage set. See &lt;&lt;descriptorsets-sampler and
         /// &lt;&lt;descriptorsets-combinedimagesampler.
@@ -213,11 +213,11 @@ namespace SharpVk
         /// maxPerStageDescriptorUniformBuffers is the maximum number of
         /// uniform buffers that can be accessible to a single shader stage in
         /// a pipeline layout. Descriptors with a type of
-        /// VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER or
-        /// VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC count against this limit.
-        /// A descriptor is accessible to a shader stage when the stageFlags
-        /// member of the DescriptorSetLayoutBinding structure has the bit for
-        /// that shader stage set. See &lt;&lt;descriptorsets-uniformbuffer and
+        /// DescriptorType.UniformBuffer or DescriptorType.UniformBufferDynamic
+        /// count against this limit. A descriptor is accessible to a shader
+        /// stage when the stageFlags member of the DescriptorSetLayoutBinding
+        /// structure has the bit for that shader stage set. See
+        /// &lt;&lt;descriptorsets-uniformbuffer and
         /// &lt;&lt;descriptorsets-uniformbufferdynamic.
         /// </summary>
         public uint MaxPerStageDescriptorUniformBuffers
@@ -230,12 +230,11 @@ namespace SharpVk
         /// maxPerStageDescriptorStorageBuffers is the maximum number of
         /// storage buffers that can be accessible to a single shader stage in
         /// a pipeline layout. Descriptors with a type of
-        /// VK_DESCRIPTOR_TYPE_STORAGE_BUFFER or
-        /// VK_DESCRIPTOR_TYPE_STORAGE_BUFFER_DYNAMIC count against this limit.
-        /// A descriptor is accessible to a pipeline shader stage when the
-        /// stageFlags member of the DescriptorSetLayoutBinding structure has
-        /// the bit for that shader stage set. See
-        /// &lt;&lt;descriptorsets-storagebuffer and
+        /// DescriptorType.StorageBuffer or DescriptorType.StorageBufferDynamic
+        /// count against this limit. A descriptor is accessible to a pipeline
+        /// shader stage when the stageFlags member of the
+        /// DescriptorSetLayoutBinding structure has the bit for that shader
+        /// stage set. See &lt;&lt;descriptorsets-storagebuffer and
         /// &lt;&lt;descriptorsets-storagebufferdynamic.
         /// </summary>
         public uint MaxPerStageDescriptorStorageBuffers
@@ -248,11 +247,11 @@ namespace SharpVk
         /// maxPerStageDescriptorSampledImages is the maximum number of sampled
         /// images that can be accessible to a single shader stage in a
         /// pipeline layout. Descriptors with a type of
-        /// VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE,
-        /// or VK_DESCRIPTOR_TYPE_UNIFORM_TEXEL_BUFFER count against this
-        /// limit. A descriptor is accessible to a pipeline shader stage when
-        /// the stageFlags member of the DescriptorSetLayoutBinding structure
-        /// has the bit for that shader stage set. See
+        /// DescriptorType.CombinedImageSampler, DescriptorType.SampledImage,
+        /// or DescriptorType.UniformTexelBuffer count against this limit. A
+        /// descriptor is accessible to a pipeline shader stage when the
+        /// stageFlags member of the DescriptorSetLayoutBinding structure has
+        /// the bit for that shader stage set. See
         /// &lt;&lt;descriptorsets-combinedimagesampler, &lt;&lt;descriptorsets-sampledimage,
         /// and &lt;&lt;descriptorsets-uniformtexelbuffer.
         /// </summary>
@@ -266,12 +265,11 @@ namespace SharpVk
         /// maxPerStageDescriptorStorageImages is the maximum number of storage
         /// images that can be accessible to a single shader stage in a
         /// pipeline layout. Descriptors with a type of
-        /// VK_DESCRIPTOR_TYPE_STORAGE_IMAGE, or
-        /// VK_DESCRIPTOR_TYPE_STORAGE_TEXEL_BUFFER count against this limit. A
-        /// descriptor is accessible to a pipeline shader stage when the
-        /// stageFlags member of the DescriptorSetLayoutBinding structure has
-        /// the bit for that shader stage set. See
-        /// &lt;&lt;descriptorsets-storageimage, and
+        /// DescriptorType.StorageImage, or DescriptorType.StorageTexelBuffer
+        /// count against this limit. A descriptor is accessible to a pipeline
+        /// shader stage when the stageFlags member of the
+        /// DescriptorSetLayoutBinding structure has the bit for that shader
+        /// stage set. See &lt;&lt;descriptorsets-storageimage, and
         /// &lt;&lt;descriptorsets-storagetexelbuffer.
         /// </summary>
         public uint MaxPerStageDescriptorStorageImages
@@ -284,7 +282,7 @@ namespace SharpVk
         /// maxPerStageDescriptorInputAttachments is the maximum number of
         /// input attachments that can be accessible to a single shader stage
         /// in a pipeline layout. Descriptors with a type of
-        /// VK_DESCRIPTOR_TYPE_INPUT_ATTACHMENT count against this limit. A
+        /// DescriptorType.InputAttachment count against this limit. A
         /// descriptor is accessible to a pipeline shader stage when the
         /// stageFlags member of the DescriptorSetLayoutBinding structure has
         /// the bit for that shader stage set. These are only supported for the
@@ -299,15 +297,14 @@ namespace SharpVk
         /// <summary>
         /// The maximum number of resources that can be accessible to a single
         /// shader stage in a pipeline layout. Descriptors with a type of
-        /// VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE,
-        /// VK_DESCRIPTOR_TYPE_STORAGE_IMAGE,
-        /// VK_DESCRIPTOR_TYPE_UNIFORM_TEXEL_BUFFER, VK_DESCRIPTOR_TYPE_STORAGE_TEXEL_BUFFER,
-        /// VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER,
-        /// VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC,
-        /// VK_DESCRIPTOR_TYPE_STORAGE_BUFFER_DYNAMIC, or
-        /// VK_DESCRIPTOR_TYPE_INPUT_ATTACHMENT count against this limit. For
-        /// the fragment shader stage the framebuffer color attachments also
-        /// count against this limit.
+        /// DescriptorType.CombinedImageSampler, DescriptorType.SampledImage,
+        /// DescriptorType.StorageImage, DescriptorType.UniformTexelBuffer,
+        /// DescriptorType.StorageTexelBuffer, DescriptorType.UniformBuffer,
+        /// DescriptorType.StorageBuffer, DescriptorType.UniformBufferDynamic,
+        /// DescriptorType.StorageBufferDynamic, or
+        /// DescriptorType.InputAttachment count against this limit. For the
+        /// fragment shader stage the framebuffer color attachments also count
+        /// against this limit.
         /// </summary>
         public uint MaxPerStageResources
         {
@@ -319,9 +316,9 @@ namespace SharpVk
         /// maxDescriptorSetSamplers is the maximum number of samplers that can
         /// be included in descriptor bindings in a pipeline layout across all
         /// pipeline shader stages and descriptor set numbers. Descriptors with
-        /// a type of VK_DESCRIPTOR_TYPE_SAMPLER or
-        /// VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER count against this limit.
-        /// See &lt;&lt;descriptorsets-sampler and
+        /// a type of DescriptorType.Sampler or
+        /// DescriptorType.CombinedImageSampler count against this limit. See
+        /// &lt;&lt;descriptorsets-sampler and
         /// &lt;&lt;descriptorsets-combinedimagesampler.
         /// </summary>
         public uint MaxDescriptorSetSamplers
@@ -334,10 +331,9 @@ namespace SharpVk
         /// maxDescriptorSetUniformBuffers is the maximum number of uniform
         /// buffers that can be included in descriptor bindings in a pipeline
         /// layout across all pipeline shader stages and descriptor set
-        /// numbers. Descriptors with a type of
-        /// VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER or
-        /// VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC count against this limit.
-        /// See &lt;&lt;descriptorsets-uniformbuffer and
+        /// numbers. Descriptors with a type of DescriptorType.UniformBuffer or
+        /// DescriptorType.UniformBufferDynamic count against this limit. See
+        /// &lt;&lt;descriptorsets-uniformbuffer and
         /// &lt;&lt;descriptorsets-uniformbufferdynamic.
         /// </summary>
         public uint MaxDescriptorSetUniformBuffers
@@ -351,8 +347,8 @@ namespace SharpVk
         /// dynamic uniform buffers that can be included in descriptor bindings
         /// in a pipeline layout across all pipeline shader stages and
         /// descriptor set numbers. Descriptors with a type of
-        /// VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC count against this limit.
-        /// See &lt;&lt;descriptorsets-uniformbufferdynamic.
+        /// DescriptorType.UniformBufferDynamic count against this limit. See
+        /// &lt;&lt;descriptorsets-uniformbufferdynamic.
         /// </summary>
         public uint MaxDescriptorSetUniformBuffersDynamic
         {
@@ -364,10 +360,9 @@ namespace SharpVk
         /// maxDescriptorSetStorageBuffers is the maximum number of storage
         /// buffers that can be included in descriptor bindings in a pipeline
         /// layout across all pipeline shader stages and descriptor set
-        /// numbers. Descriptors with a type of
-        /// VK_DESCRIPTOR_TYPE_STORAGE_BUFFER or
-        /// VK_DESCRIPTOR_TYPE_STORAGE_BUFFER_DYNAMIC count against this limit.
-        /// See &lt;&lt;descriptorsets-storagebuffer and
+        /// numbers. Descriptors with a type of DescriptorType.StorageBuffer or
+        /// DescriptorType.StorageBufferDynamic count against this limit. See
+        /// &lt;&lt;descriptorsets-storagebuffer and
         /// &lt;&lt;descriptorsets-storagebufferdynamic.
         /// </summary>
         public uint MaxDescriptorSetStorageBuffers
@@ -381,8 +376,8 @@ namespace SharpVk
         /// dynamic storage buffers that can be included in descriptor bindings
         /// in a pipeline layout across all pipeline shader stages and
         /// descriptor set numbers. Descriptors with a type of
-        /// VK_DESCRIPTOR_TYPE_STORAGE_BUFFER_DYNAMIC count against this limit.
-        /// See &lt;&lt;descriptorsets-storagebufferdynamic.
+        /// DescriptorType.StorageBufferDynamic count against this limit. See
+        /// &lt;&lt;descriptorsets-storagebufferdynamic.
         /// </summary>
         public uint MaxDescriptorSetStorageBuffersDynamic
         {
@@ -395,11 +390,10 @@ namespace SharpVk
         /// images that can be included in descriptor bindings in a pipeline
         /// layout across all pipeline shader stages and descriptor set
         /// numbers. Descriptors with a type of
-        /// VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE,
-        /// or VK_DESCRIPTOR_TYPE_UNIFORM_TEXEL_BUFFER count against this
-        /// limit. See &lt;&lt;descriptorsets-combinedimagesampler,
-        /// &lt;&lt;descriptorsets-sampledimage, and
-        /// &lt;&lt;descriptorsets-uniformtexelbuffer.
+        /// DescriptorType.CombinedImageSampler, DescriptorType.SampledImage,
+        /// or DescriptorType.UniformTexelBuffer count against this limit. See
+        /// &lt;&lt;descriptorsets-combinedimagesampler, &lt;&lt;descriptorsets-sampledimage,
+        /// and &lt;&lt;descriptorsets-uniformtexelbuffer.
         /// </summary>
         public uint MaxDescriptorSetSampledImages
         {
@@ -411,10 +405,9 @@ namespace SharpVk
         /// maxDescriptorSetStorageImages is the maximum number of storage
         /// images that can be included in descriptor bindings in a pipeline
         /// layout across all pipeline shader stages and descriptor set
-        /// numbers. Descriptors with a type of
-        /// VK_DESCRIPTOR_TYPE_STORAGE_IMAGE, or
-        /// VK_DESCRIPTOR_TYPE_STORAGE_TEXEL_BUFFER count against this limit.
-        /// See &lt;&lt;descriptorsets-storageimage, and
+        /// numbers. Descriptors with a type of DescriptorType.StorageImage, or
+        /// DescriptorType.StorageTexelBuffer count against this limit. See
+        /// &lt;&lt;descriptorsets-storageimage, and
         /// &lt;&lt;descriptorsets-storagetexelbuffer.
         /// </summary>
         public uint MaxDescriptorSetStorageImages
@@ -428,7 +421,7 @@ namespace SharpVk
         /// attachments that can be included in descriptor bindings in a
         /// pipeline layout across all pipeline shader stages and descriptor
         /// set numbers. Descriptors with a type of
-        /// VK_DESCRIPTOR_TYPE_INPUT_ATTACHMENT count against this limit. See
+        /// DescriptorType.InputAttachment count against this limit. See
         /// &lt;&lt;descriptorsets-inputattachment.
         /// </summary>
         public uint MaxDescriptorSetInputAttachments
@@ -924,10 +917,10 @@ namespace SharpVk
         /// minUniformBufferOffsetAlignment is the minimum required: alignment,
         /// in bytes, for the offset member of the DescriptorBufferInfo
         /// structure for uniform buffers. When a descriptor of type
-        /// VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER or
-        /// VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC is updated, the offset
-        /// must be an integer multiple of this limit. Similarly, dynamic
-        /// offsets for uniform buffers must be multiples of this limit.
+        /// DescriptorType.UniformBuffer or DescriptorType.UniformBufferDynamic
+        /// is updated, the offset must be an integer multiple of this limit.
+        /// Similarly, dynamic offsets for uniform buffers must be multiples of
+        /// this limit.
         /// </summary>
         public DeviceSize MinUniformBufferOffsetAlignment
         {
@@ -939,10 +932,10 @@ namespace SharpVk
         /// minStorageBufferOffsetAlignment is the minimum required: alignment,
         /// in bytes, for the offset member of the DescriptorBufferInfo
         /// structure for storage buffers. When a descriptor of type
-        /// VK_DESCRIPTOR_TYPE_STORAGE_BUFFER or
-        /// VK_DESCRIPTOR_TYPE_STORAGE_BUFFER_DYNAMIC is updated, the offset
-        /// must be an integer multiple of this limit. Similarly, dynamic
-        /// offsets for storage buffers must be multiples of this limit.
+        /// DescriptorType.StorageBuffer or DescriptorType.StorageBufferDynamic
+        /// is updated, the offset must be an integer multiple of this limit.
+        /// Similarly, dynamic offsets for storage buffers must be multiples of
+        /// this limit.
         /// </summary>
         public DeviceSize MinStorageBufferOffsetAlignment
         {
@@ -1113,9 +1106,8 @@ namespace SharpVk
         /// <summary>
         /// sampledImageColorSampleCounts is a bitmask^1^ of
         /// SampleCountFlagBits bits indicating the sample counts supported for
-        /// all 2D images created with VK_IMAGE_TILING_OPTIMAL, usage
-        /// containing VK_IMAGE_USAGE_SAMPLED_BIT, and a non-integer color
-        /// format.
+        /// all 2D images created with ImageTiling.Optimal, usage containing
+        /// VK_IMAGE_USAGE_SAMPLED_BIT, and a non-integer color format.
         /// </summary>
         public SharpVk.SampleCountFlags? SampledImageColorSampleCounts
         {
@@ -1126,8 +1118,8 @@ namespace SharpVk
         /// <summary>
         /// sampledImageIntegerSampleCounts is a bitmask^1^ of
         /// SampleCountFlagBits bits indicating the sample counts supported for
-        /// all 2D images created with VK_IMAGE_TILING_OPTIMAL, usage
-        /// containing VK_IMAGE_USAGE_SAMPLED_BIT, and an integer color format.
+        /// all 2D images created with ImageTiling.Optimal, usage containing
+        /// VK_IMAGE_USAGE_SAMPLED_BIT, and an integer color format.
         /// </summary>
         public SharpVk.SampleCountFlags? SampledImageIntegerSampleCounts
         {
@@ -1138,8 +1130,8 @@ namespace SharpVk
         /// <summary>
         /// sampledImageDepthSampleCounts is a bitmask^1^ of
         /// SampleCountFlagBits bits indicating the sample counts supported for
-        /// all 2D images created with VK_IMAGE_TILING_OPTIMAL, usage
-        /// containing VK_IMAGE_USAGE_SAMPLED_BIT, and a depth format.
+        /// all 2D images created with ImageTiling.Optimal, usage containing
+        /// VK_IMAGE_USAGE_SAMPLED_BIT, and a depth format.
         /// </summary>
         public SharpVk.SampleCountFlags? SampledImageDepthSampleCounts
         {
@@ -1150,7 +1142,7 @@ namespace SharpVk
         /// <summary>
         /// sampledImageStencilSampleCounts is a bitmask^1^ of
         /// SampleCountFlagBits bits indicating the sample supported for all 2D
-        /// images created with VK_IMAGE_TILING_OPTIMAL, usage containing
+        /// images created with ImageTiling.Optimal, usage containing
         /// VK_IMAGE_USAGE_SAMPLED_BIT, and a stencil format.
         /// </summary>
         public SharpVk.SampleCountFlags? SampledImageStencilSampleCounts
@@ -1162,7 +1154,7 @@ namespace SharpVk
         /// <summary>
         /// storageImageSampleCounts is a bitmask^1^ of SampleCountFlagBits
         /// bits indicating the sample counts supported for all 2D images
-        /// created with VK_IMAGE_TILING_OPTIMAL, and usage containing
+        /// created with ImageTiling.Optimal, and usage containing
         /// VK_IMAGE_USAGE_STORAGE_BIT.
         /// </summary>
         public SharpVk.SampleCountFlags? StorageImageSampleCounts
@@ -1272,7 +1264,7 @@ namespace SharpVk
         /// lineWidthRange[2] is the range [eq]#[minimum,maximum]# of supported
         /// widths for lines. Values specified by the lineWidth member of the
         /// PipelineRasterizationStateCreateInfo or the lineWidth parameter to
-        /// fname:vkCmdSetLineWidth are clamped to this range.
+        /// CommandBuffer.SetLineWidth are clamped to this range.
         /// </summary>
         public (float, float) LineWidthRange
         {
@@ -1332,10 +1324,10 @@ namespace SharpVk
         
         /// <summary>
         /// optimalBufferCopyOffsetAlignment is the optimal buffer offset
-        /// alignment in bytes for fname:vkCmdCopyBufferToImage and
-        /// fname:vkCmdCopyImageToBuffer. The per texel alignment requirements
-        /// are still enforced, this is just an additional alignment
-        /// recommendation for optimal performance and power.
+        /// alignment in bytes for CommandBuffer.CopyBufferToImage and
+        /// CommandBuffer.CopyImageToBuffer. The per texel alignment
+        /// requirements are still enforced, this is just an additional
+        /// alignment recommendation for optimal performance and power.
         /// </summary>
         public DeviceSize OptimalBufferCopyOffsetAlignment
         {
@@ -1345,8 +1337,8 @@ namespace SharpVk
         
         /// <summary>
         /// optimalBufferCopyRowPitchAlignment is the optimal buffer row pitch
-        /// alignment in bytes for fname:vkCmdCopyBufferToImage and
-        /// fname:vkCmdCopyImageToBuffer. Row pitch is the number of bytes
+        /// alignment in bytes for CommandBuffer.CopyBufferToImage and
+        /// CommandBuffer.CopyImageToBuffer. Row pitch is the number of bytes
         /// between texels with the same X coordinate in adjacent rows (Y
         /// coordinates differ by one). The per texel alignment requirements
         /// are still enforced, this is just an additional alignment

@@ -36,9 +36,8 @@ namespace SharpVk.NVidia
         None = 0, 
         
         /// <summary>
-        /// VK_EXTERNAL_MEMORY_FEATURE_DEDICATED_ONLY_BIT_NV: External memory
-        /// of the specified type must be created as a dedicated allocation
-        /// when used in the manner specified.
+        /// External memory of the specified type must be created as a
+        /// dedicated allocation when used in the manner specified.
         /// </summary>
         DedicatedOnly = 1 << 0, 
         

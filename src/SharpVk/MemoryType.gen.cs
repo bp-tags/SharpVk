@@ -43,8 +43,7 @@ namespace SharpVk
         }
         
         /// <summary>
-        /// A bitmask of properties for this memory type. The bits specified in
-        /// propertyFlags are: + --
+        /// A bitmask of properties for this memory type.
         /// </summary>
         public SharpVk.MemoryPropertyFlags PropertyFlags; 
         

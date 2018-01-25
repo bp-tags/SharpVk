@@ -44,7 +44,7 @@ namespace SharpVk
         
         /// <summary>
         /// An array of two Offset3D structures specifying the bounds of the
-        /// source region within srcSubresource.
+        /// source region within the source subresource.
         /// </summary>
         public (SharpVk.Offset3D, SharpVk.Offset3D) SourceOffsets
         {
@@ -63,7 +63,7 @@ namespace SharpVk
         
         /// <summary>
         /// An array of two Offset3D structures specifying the bounds of the
-        /// destination region within dstSubresource.
+        /// destination region within the destination subresource.
         /// </summary>
         public (SharpVk.Offset3D, SharpVk.Offset3D) DestinationOffsets
         {

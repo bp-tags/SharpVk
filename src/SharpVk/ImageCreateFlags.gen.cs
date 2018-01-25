@@ -58,13 +58,13 @@ namespace SharpVk
         SparseAliased = 1 << 2, 
         
         /// <summary>
-        /// Indicates that the image can be used to create a ImageView with a
+        /// Indicates that the image can be used to create an ImageView with a
         /// different format from the image.
         /// </summary>
         MutableFormat = 1 << 3, 
         
         /// <summary>
-        /// Indicates that the image can be used to create a ImageView of type
+        /// Indicates that the image can be used to create an ImageView of type
         /// VK_IMAGE_VIEW_TYPE_CUBE or VK_IMAGE_VIEW_TYPE_CUBE_ARRAY.
         /// </summary>
         CubeCompatible = 1 << 4, 
@@ -78,7 +78,7 @@ namespace SharpVk
         BindSfr = 1 << 6, 
         
         /// <summary>
-        /// Indicates that the image can be used to create a ImageView of type
+        /// Indicates that the image can be used to create an ImageView of type
         /// VK_IMAGE_VIEW_TYPE_2D or VK_IMAGE_VIEW_TYPE_2D_ARRAY.
         /// </summary>
         ImageCreate2dArrayCompatible = 1 << 5, 

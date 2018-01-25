@@ -44,7 +44,7 @@ namespace SharpVk
         
         /// <summary>
         /// A render pass that defines what render passes the framebuffer will
-        /// be compatible with. See Render Pass Compatibility for details.
+        /// be compatible with.
         /// </summary>
         public SharpVk.RenderPass RenderPass
         {

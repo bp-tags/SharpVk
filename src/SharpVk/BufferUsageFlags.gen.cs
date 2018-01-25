@@ -37,7 +37,7 @@ namespace SharpVk
         
         /// <summary>
         /// Indicates that the buffer can be used as the source of a _transfer
-        /// command_ (see the definition of VK_PIPELINE_STAGE_TRANSFER_BIT).
+        /// command_ (see the definition of PipelineStage.Transfer).
         /// </summary>
         TransferSource = 1 << 0, 
         
@@ -50,52 +50,52 @@ namespace SharpVk
         /// <summary>
         /// Indicates that the buffer can be used to create a BufferView
         /// suitable for occupying a DescriptorSet slot of type
-        /// VK_DESCRIPTOR_TYPE_UNIFORM_TEXEL_BUFFER.
+        /// DescriptorType.UniformTexelBuffer.
         /// </summary>
         UniformTexelBuffer = 1 << 2, 
         
         /// <summary>
         /// Indicates that the buffer can be used to create a BufferView
         /// suitable for occupying a DescriptorSet slot of type
-        /// VK_DESCRIPTOR_TYPE_STORAGE_TEXEL_BUFFER.
+        /// StorageTexelBuffer.
         /// </summary>
         StorageTexelBuffer = 1 << 3, 
         
         /// <summary>
         /// Indicates that the buffer can be used in a DescriptorBufferInfo
         /// suitable for occupying a DescriptorSet slot either of type
-        /// VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER or
-        /// VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC.
+        /// DescriptorType.UniformBuffer or
+        /// DescriptorType.UniformBufferDynamic.
         /// </summary>
         UniformBuffer = 1 << 4, 
         
         /// <summary>
         /// Indicates that the buffer can be used in a DescriptorBufferInfo
         /// suitable for occupying a DescriptorSet slot either of type
-        /// VK_DESCRIPTOR_TYPE_STORAGE_BUFFER or
-        /// VK_DESCRIPTOR_TYPE_STORAGE_BUFFER_DYNAMIC.
+        /// StorageBuffer or StorageBufferDynamic.
         /// </summary>
         StorageBuffer = 1 << 5, 
         
         /// <summary>
         /// Indicates that the buffer is suitable for passing as the buffer
-        /// parameter to fname:vkCmdBindIndexBuffer.
+        /// parameter to CommandBuffer.BindIndexBuffer.
         /// </summary>
         IndexBuffer = 1 << 6, 
         
         /// <summary>
         /// Indicates that the buffer is suitable for passing as an element of
-        /// the pBuffers array to fname:vkCmdBindVertexBuffers.
+        /// the pBuffers array to CommandBuffer.BindVertexBuffers.
         /// </summary>
         VertexBuffer = 1 << 7, 
         
         /// <summary>
         /// Indicates that the buffer is suitable for passing as the buffer
-        /// parameter to fname:vkCmdDrawIndirect,
-        /// fname:vkCmdDrawIndexedIndirect, or fname:vkCmdDispatchIndirect. It
-        /// is also suitable for passing as the buffer member of
-        /// IndirectCommandsTokenNVX, or sequencesCountBuffer or
-        /// sequencesIndexBuffer member of CmdProcessCommandsInfoNVX
+        /// parameter to CommandBuffer.DrawIndirect,
+        /// CommandBuffer.DrawIndexedIndirect, or
+        /// CommandBuffer.DispatchIndirect. It is also suitable for passing as
+        /// the buffer member of IndirectCommandsTokenNVX, or
+        /// sequencesCountBuffer or sequencesIndexBuffer member of
+        /// CmdProcessCommandsInfoNVX
         /// </summary>
         IndirectBuffer = 1 << 8, 
     }

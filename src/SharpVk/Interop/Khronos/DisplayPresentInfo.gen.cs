@@ -67,7 +67,7 @@ namespace SharpVk.Interop.Khronos
         public SharpVk.Rect2D DestinationRect; 
         
         /// <summary>
-        /// persistent: If this is VK_TRUE, the display engine will enable
+        /// persistent: If this is true, the display engine will enable
         /// buffered mode on displays that support it. This allows the display
         /// engine to stop sending content to the display until a new image is
         /// presented. The display will instead maintain a copy of the last

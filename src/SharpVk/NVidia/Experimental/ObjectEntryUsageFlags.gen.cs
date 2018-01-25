@@ -36,14 +36,12 @@ namespace SharpVk.NVidia.Experimental
         None = 0, 
         
         /// <summary>
-        /// Indicates that the resource is bound to
-        /// VK_PIPELINE_BIND_POINT_GRAPHICS
+        /// Indicates that the resource is bound to PipelineBindPoint.Graphics
         /// </summary>
         Graphics = 1 << 0, 
         
         /// <summary>
-        /// Indicates that the resource is bound to
-        /// VK_PIPELINE_BIND_POINT_COMPUTE
+        /// Indicates that the resource is bound to PipelineBindPoint.Compute
         /// </summary>
         Compute = 1 << 1, 
     }

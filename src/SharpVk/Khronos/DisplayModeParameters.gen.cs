@@ -48,8 +48,8 @@ namespace SharpVk.Khronos
         public SharpVk.Extent2D VisibleRegion; 
         
         /// <summary>
-        /// A uint32_t that is the number of times the display is refreshed
-        /// each second multiplied by 1000.
+        /// A UInt32 that is the number of times the display is refreshed each
+        /// second multiplied by 1000.
         /// </summary>
         public uint RefreshRate; 
     }

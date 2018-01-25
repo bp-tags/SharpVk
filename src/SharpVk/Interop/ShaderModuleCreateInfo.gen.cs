@@ -49,14 +49,14 @@ namespace SharpVk.Interop
         public SharpVk.ShaderModuleCreateFlags Flags; 
         
         /// <summary>
-        /// The size, in bytes, of the code pointed to by pCode.
+        /// The size, in bytes, of the code.
         /// </summary>
         public HostSize CodeSize; 
         
         /// <summary>
-        /// pCode points to code that is used to create the shader module. The
-        /// type and format of the code is determined from the content of the
-        /// memory addressed by pCode.
+        /// Points to code that is used to create the shader module. The type
+        /// and format of the code is determined from the content of the memory
+        /// addressed.
         /// </summary>
         public uint* Code; 
     }

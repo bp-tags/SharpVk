@@ -36,26 +36,25 @@ namespace SharpVk
         None = 0, 
         
         /// <summary>
-        /// VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT: Stage of the pipeline where any
-        /// commands are initially received by the queue.
+        /// Stage of the pipeline where any commands are initially received by
+        /// the queue.
         /// </summary>
         TopOfPipe = 1 << 0, 
         
         /// <summary>
-        /// VK_PIPELINE_STAGE_DRAW_INDIRECT_BIT: Stage of the pipeline where
-        /// Draw/DispatchIndirect data structures are consumed. This stage also
-        /// includes reading commands written by flink:vkCmdProcessCommandsNVX.
+        /// Stage of the pipeline where Draw/DispatchIndirect data structures
+        /// are consumed. This stage also includes reading commands written by
+        /// flink:vkCmdProcessCommandsNVX.
         /// </summary>
         DrawIndirect = 1 << 1, 
         
         /// <summary>
-        /// VK_PIPELINE_STAGE_VERTEX_INPUT_BIT: Stage of the pipeline where
-        /// vertex and index buffers are consumed.
+        /// Stage of the pipeline where vertex and index buffers are consumed.
         /// </summary>
         VertexInput = 1 << 2, 
         
         /// <summary>
-        /// VK_PIPELINE_STAGE_VERTEX_SHADER_BIT: Vertex shader stage.
+        /// Vertex shader stage.
         /// </summary>
         VertexShader = 1 << 3, 
         
@@ -70,70 +69,67 @@ namespace SharpVk
         TessellationEvaluationShader = 1 << 5, 
         
         /// <summary>
-        /// VK_PIPELINE_STAGE_GEOMETRY_SHADER_BIT: Geometry shader stage.
+        /// Geometry shader stage.
         /// </summary>
         GeometryShader = 1 << 6, 
         
         /// <summary>
-        /// VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT: Fragment shader stage.
+        /// Fragment shader stage.
         /// </summary>
         FragmentShader = 1 << 7, 
         
         /// <summary>
-        /// VK_PIPELINE_STAGE_EARLY_FRAGMENT_TESTS_BIT: Stage of the pipeline
-        /// where early fragment tests (depth and stencil tests before fragment
-        /// shading) are performed. This stage also includes subpass load
-        /// operations for framebuffer attachments with a depth/stencil format.
+        /// Stage of the pipeline where early fragment tests (depth and stencil
+        /// tests before fragment shading) are performed. This stage also
+        /// includes subpass load operations for framebuffer attachments with a
+        /// depth/stencil format.
         /// </summary>
         EarlyFragmentTests = 1 << 8, 
         
         /// <summary>
-        /// VK_PIPELINE_STAGE_LATE_FRAGMENT_TESTS_BIT: Stage of the pipeline
-        /// where late fragment tests (depth and stencil tests after fragment
-        /// shading) are performed. This stage also includes subpass store
-        /// operations for framebuffer attachments with a depth/stencil format.
+        /// Stage of the pipeline where late fragment tests (depth and stencil
+        /// tests after fragment shading) are performed. This stage also
+        /// includes subpass store operations for framebuffer attachments with
+        /// a depth/stencil format.
         /// </summary>
         LateFragmentTests = 1 << 9, 
         
         /// <summary>
-        /// VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT: Stage of the
-        /// pipeline after blending where the final color values are output
-        /// from the pipeline. This stage also includes subpass load and store
-        /// operations and multisample resolve operations for framebuffer
-        /// attachments with a color format.
+        /// Stage of the pipeline after blending where the final color values
+        /// are output from the pipeline. This stage also includes subpass load
+        /// and store operations and multisample resolve operations for
+        /// framebuffer attachments with a color format.
         /// </summary>
         ColorAttachmentOutput = 1 << 10, 
         
         /// <summary>
-        /// VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT: Execution of a compute
-        /// shader.
+        /// Execution of a compute shader.
         /// </summary>
         ComputeShader = 1 << 11, 
         
         /// <summary>
-        /// VK_PIPELINE_STAGE_TRANSFER_BIT: Execution of copy commands. This
-        /// includes the operations resulting from all copy commands, clear
-        /// commands (with the exception of flink:vkCmdClearAttachments), and
-        /// flink:vkCmdCopyQueryPoolResults.
+        /// Execution of copy commands. This includes the operations resulting
+        /// from all copy commands, clear commands (with the exception of
+        /// flink:vkCmdClearAttachments), and flink:vkCmdCopyQueryPoolResults.
         /// </summary>
         Transfer = 1 << 12, 
         
         /// <summary>
-        /// VK_PIPELINE_STAGE_BOTTOM_OF_PIPE_BIT: Final stage in the pipeline
-        /// where operations generated by all commands complete execution.
+        /// Final stage in the pipeline where operations generated by all
+        /// commands complete execution.
         /// </summary>
         BottomOfPipe = 1 << 13, 
         
         /// <summary>
-        /// VK_PIPELINE_STAGE_HOST_BIT: A pseudo-stage indicating execution on
-        /// the host of reads/writes of device memory. This stage is not
-        /// invoked by any commands recorded in a command buffer.
+        /// A pseudo-stage indicating execution on the host of reads/writes of
+        /// device memory. This stage is not invoked by any commands recorded
+        /// in a command buffer.
         /// </summary>
         Host = 1 << 14, 
         
         /// <summary>
-        /// VK_PIPELINE_STAGE_ALL_GRAPHICS_BIT: Execution of all graphics
-        /// pipeline stages. Equivalent to the logical or of:
+        /// Execution of all graphics pipeline stages. Equivalent to the
+        /// logical or of:
         /// </summary>
         AllGraphics = 1 << 15, 
         
@@ -143,8 +139,7 @@ namespace SharpVk
         AllCommands = 1 << 16, 
         
         /// <summary>
-        /// VK_PIPELINE_STAGE_COMMAND_PROCESS_BIT_NVX: Stage of the pipeline
-        /// where device-side generation of commands via
+        /// Stage of the pipeline where device-side generation of commands via
         /// flink:vkCmdProcessCommandsNVX is handled.
         /// </summary>
         CommandProcess = 1 << 17, 

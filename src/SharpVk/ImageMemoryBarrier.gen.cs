@@ -34,7 +34,7 @@ namespace SharpVk
     public partial struct ImageMemoryBarrier
     {
         /// <summary>
-        /// srcAccessMask defines a source access mask.
+        /// Defines a source access mask.
         /// </summary>
         public SharpVk.AccessFlags? SourceAccessMask
         {
@@ -43,7 +43,7 @@ namespace SharpVk
         }
         
         /// <summary>
-        /// dstAccessMask defines a destination access mask.
+        /// Defines a destination access mask.
         /// </summary>
         public SharpVk.AccessFlags? DestinationAccessMask
         {
@@ -97,8 +97,8 @@ namespace SharpVk
         }
         
         /// <summary>
-        /// subresourceRange describes the image subresource range within image
-        /// that is affected by this barrier.
+        /// Describes the image subresource range within image that is affected
+        /// by this barrier.
         /// </summary>
         public SharpVk.ImageSubresourceRange SubresourceRange
         {

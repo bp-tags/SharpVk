@@ -48,30 +48,29 @@ namespace SharpVk
         TransferDestination = 1 << 1, 
         
         /// <summary>
-        /// Indicates that the image can be used to create a ImageView suitable
-        /// for occupying a DescriptorSet slot either of type
-        /// VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE or
-        /// VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, and be sampled by a
-        /// shader.
+        /// Indicates that the image can be used to create an ImageView
+        /// suitable for occupying a DescriptorSet slot either of type
+        /// DescriptorType.SampledImage or DescriptorType.CombinedImageSampler,
+        /// and be sampled by a shader.
         /// </summary>
         Sampled = 1 << 2, 
         
         /// <summary>
-        /// Indicates that the image can be used to create a ImageView suitable
-        /// for occupying a DescriptorSet slot of type
-        /// VK_DESCRIPTOR_TYPE_STORAGE_IMAGE.
+        /// Indicates that the image can be used to create an ImageView
+        /// suitable for occupying a DescriptorSet slot of type
+        /// DescriptorType.StorageImage.
         /// </summary>
         Storage = 1 << 3, 
         
         /// <summary>
-        /// Indicates that the image can be used to create a ImageView suitable
-        /// for use as a color or resolve attachment in a Framebuffer.
+        /// Indicates that the image can be used to create an ImageView
+        /// suitable for use as a color or resolve attachment in a Framebuffer.
         /// </summary>
         ColorAttachment = 1 << 4, 
         
         /// <summary>
-        /// Indicates that the image can be used to create a ImageView suitable
-        /// for use as a depth/stencil attachment in a Framebuffer.
+        /// Indicates that the image can be used to create an ImageView
+        /// suitable for use as a depth/stencil attachment in a Framebuffer.
         /// </summary>
         DepthStencilAttachment = 1 << 5, 
         
@@ -79,17 +78,16 @@ namespace SharpVk
         /// Indicates that the memory bound to this image will have been
         /// allocated with the VK_MEMORY_PROPERTY_LAZILY_ALLOCATED_BIT (see
         /// &lt;&lt;memory for more detail). This bit can be set for any image
-        /// that can be used to create a ImageView suitable for use as a color,
-        /// resolve, depth/stencil, or input attachment.
+        /// that can be used to create an ImageView suitable for use as a
+        /// color, resolve, depth/stencil, or input attachment.
         /// </summary>
         TransientAttachment = 1 << 6, 
         
         /// <summary>
-        /// Indicates that the image can be used to create a ImageView suitable
-        /// for occupying DescriptorSet slot of type
-        /// VK_DESCRIPTOR_TYPE_INPUT_ATTACHMENT; be read from a shader as an
-        /// input attachment; and be used as an input attachment in a
-        /// framebuffer.
+        /// Indicates that the image can be used to create an ImageView
+        /// suitable for occupying DescriptorSet slot of type
+        /// DescriptorType.InputAttachment; be read from a shader as an input
+        /// attachment; and be used as an input attachment in a framebuffer.
         /// </summary>
         InputAttachment = 1 << 7, 
     }

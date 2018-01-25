@@ -52,8 +52,8 @@ namespace SharpVk
         }
         
         /// <summary>
-        /// size is either the size of range, or VK_WHOLE_SIZE to affect the
-        /// range from offset to the end of the current mapping of the
+        /// size is either the size of range, or Constants.WholeSize to affect
+        /// the range from offset to the end of the current mapping of the
         /// allocation.
         /// </summary>
         public DeviceSize Size

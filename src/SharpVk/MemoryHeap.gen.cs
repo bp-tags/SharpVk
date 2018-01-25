@@ -48,8 +48,7 @@ namespace SharpVk
         public DeviceSize Size; 
         
         /// <summary>
-        /// A bitmask of attribute flags for the heap. The bits specified in
-        /// flags are: + --
+        /// A bitmask of attribute flags for the heap.
         /// </summary>
         public SharpVk.MemoryHeapFlags Flags; 
     }

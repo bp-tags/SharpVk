@@ -895,10 +895,10 @@ namespace SharpVk
         /// </param>
         /// <param name="range">
         /// A size in bytes of the buffer view. If range is equal to
-        /// VK_WHOLE_SIZE, the range from offset to the end of the buffer is
-        /// used. If VK_WHOLE_SIZE is used and the remaining size of the buffer
-        /// is not a multiple of the element size of format, then the nearest
-        /// smaller multiple is used.
+        /// Constants.WholeSize, the range from offset to the end of the buffer
+        /// is used. If Constants.WholeSize is used and the remaining size of
+        /// the buffer is not a multiple of the element size of format, then
+        /// the nearest smaller multiple is used.
         /// </param>
         /// <param name="allocator">
         /// An optional AllocationCallbacks instance that controls host memory
@@ -960,7 +960,7 @@ namespace SharpVk
         /// ImageCreateFlagBits below for a description of the supported bits.
         /// </param>
         /// <param name="imageType">
-        /// A ImageType specifying the basic dimensionality of the image, as
+        /// An ImageType specifying the basic dimensionality of the image, as
         /// described below. Layers in array textures do not count as a
         /// dimension for the purposes of the image type.
         /// </param>
@@ -984,7 +984,7 @@ namespace SharpVk
         /// SampleCountFlagBits. See Multisampling.
         /// </param>
         /// <param name="tiling">
-        /// A ImageTiling specifying the tiling arrangement of the data
+        /// An ImageTiling specifying the tiling arrangement of the data
         /// elements in memory, as described below.
         /// </param>
         /// <param name="usage">
@@ -1145,7 +1145,7 @@ namespace SharpVk
         /// Reserved for future use.
         /// </param>
         /// <param name="image">
-        /// A Image on which the view will be created.
+        /// An Image on which the view will be created.
         /// </param>
         /// <param name="viewType">
         /// The type of the image view.
@@ -1157,10 +1157,9 @@ namespace SharpVk
         /// <param name="components">
         /// Specifies a remapping of color components (or of depth or stencil
         /// components after they have been converted into color components).
-        /// See ComponentMapping.
         /// </param>
         /// <param name="subresourceRange">
-        /// A ImageSubresourceRange selecting the set of mipmap levels and
+        /// An ImageSubresourceRange selecting the set of mipmap levels and
         /// array layers to be accessible to the view.
         /// </param>
         /// <param name="imageViewUsageCreateInfoKhr">
@@ -1234,7 +1233,7 @@ namespace SharpVk
         /// Reserved for future use.
         /// </param>
         /// <param name="codeSize">
-        /// The size, in bytes, of the code pointed to by pCode.
+        /// The size, in bytes, of the code.
         /// </param>
         /// <param name="code">
         /// </param>
@@ -1488,8 +1487,7 @@ namespace SharpVk
         /// </param>
         /// <param name="inputAssemblyState">
         /// An instance of the PipelineInputAssemblyStateCreateInfo structure
-        /// which determines input assembly behavior, as described in Drawing
-        /// Commands.
+        /// which determines input assembly behavior.
         /// </param>
         /// <param name="tessellationState">
         /// An instance of the PipelineTessellationStateCreateInfo structure,
@@ -1533,7 +1531,7 @@ namespace SharpVk
         /// A handle to a render pass object describing the environment in
         /// which the pipeline will be used; the pipeline must only be used
         /// with an instance of any render pass compatible with the one
-        /// provided. See Render Pass Compatibility for more information.
+        /// provided.
         /// </param>
         /// <param name="subpass">
         /// The index of the subpass in the render pass where this pipeline
@@ -2376,7 +2374,7 @@ namespace SharpVk
         /// </param>
         /// <param name="renderPass">
         /// A render pass that defines what render passes the framebuffer will
-        /// be compatible with. See Render Pass Compatibility for details.
+        /// be compatible with.
         /// </param>
         /// <param name="attachments">
         /// </param>

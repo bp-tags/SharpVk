@@ -55,17 +55,17 @@ namespace SharpVk
         
         /// <summary>
         /// The size in bytes that is used for this descriptor update, or
-        /// VK_WHOLE_SIZE to use the range from offset to the end of the
-        /// buffer. + -- [NOTE] .Note ==== When using VK_WHOLE_SIZE, the
+        /// Constants.WholeSize to use the range from offset to the end of the
+        /// buffer. + -- [NOTE] .Note ==== When using Constants.WholeSize, the
         /// effective range must not be larger than the maximum range for the
         /// descriptor type (maxUniformBufferRange or maxStorageBufferRange).
-        /// This means that VK_WHOLE_SIZE is not typically useful in the common
-        /// case where uniform buffer descriptors are suballocated from a
-        /// buffer that is much larger than maxUniformBufferRange. ==== -- +
-        /// For VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC and
-        /// VK_DESCRIPTOR_TYPE_STORAGE_BUFFER_DYNAMIC descriptor types, offset
-        /// is the base offset from which the dynamic offset is applied and
-        /// range is the static size used for all dynamic offsets.
+        /// This means that Constants.WholeSize is not typically useful in the
+        /// common case where uniform buffer descriptors are suballocated from
+        /// a buffer that is much larger than maxUniformBufferRange. ==== -- +
+        /// For DescriptorType.UniformBufferDynamic and
+        /// DescriptorType.StorageBufferDynamic descriptor types, offset is the
+        /// base offset from which the dynamic offset is applied and range is
+        /// the static size used for all dynamic offsets.
         /// </summary>
         public DeviceSize Range
         {

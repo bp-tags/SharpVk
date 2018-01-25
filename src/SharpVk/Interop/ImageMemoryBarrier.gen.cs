@@ -44,12 +44,12 @@ namespace SharpVk.Interop
         public void* Next; 
         
         /// <summary>
-        /// srcAccessMask defines a source access mask.
+        /// Defines a source access mask.
         /// </summary>
         public SharpVk.AccessFlags SourceAccessMask; 
         
         /// <summary>
-        /// dstAccessMask defines a destination access mask.
+        /// Defines a destination access mask.
         /// </summary>
         public SharpVk.AccessFlags DestinationAccessMask; 
         
@@ -79,8 +79,8 @@ namespace SharpVk.Interop
         public SharpVk.Interop.Image Image; 
         
         /// <summary>
-        /// subresourceRange describes the image subresource range within image
-        /// that is affected by this barrier.
+        /// Describes the image subresource range within image that is affected
+        /// by this barrier.
         /// </summary>
         public SharpVk.ImageSubresourceRange SubresourceRange; 
     }

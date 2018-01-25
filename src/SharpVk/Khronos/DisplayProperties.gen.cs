@@ -44,9 +44,9 @@ namespace SharpVk.Khronos
         }
         
         /// <summary>
-        /// A NULL-terminated string containing the name of the display.
-        /// Generally, this will be the name provided by the display's EDID. It
-        /// can be Null if no suitable name is available.
+        /// A string containing the name of the display. Generally, this will
+        /// be the name provided by the display's EDID. It can be Null if no
+        /// suitable name is available.
         /// </summary>
         public string DisplayName
         {

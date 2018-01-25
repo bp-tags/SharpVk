@@ -30,32 +30,28 @@ namespace SharpVk
     public enum SystemAllocationScope
     {
         /// <summary>
-        /// VK_SYSTEM_ALLOCATION_SCOPE_COMMAND - The allocation is scoped to
-        /// the duration of the Vulkan command.
+        /// The allocation is scoped to the duration of the Vulkan command.
         /// </summary>
         Command = 0, 
         
         /// <summary>
-        /// VK_SYSTEM_ALLOCATION_SCOPE_OBJECT - The allocation is scoped to the
-        /// lifetime of the Vulkan object that is being created or used.
+        /// The allocation is scoped to the lifetime of the Vulkan object that
+        /// is being created or used.
         /// </summary>
         Object = 1, 
         
         /// <summary>
-        /// VK_SYSTEM_ALLOCATION_SCOPE_CACHE - The allocation is scoped to the
-        /// lifetime of a PipelineCache object.
+        /// The allocation is scoped to the lifetime of a PipelineCache object.
         /// </summary>
         Cache = 2, 
         
         /// <summary>
-        /// VK_SYSTEM_ALLOCATION_SCOPE_DEVICE - The allocation is scoped to the
-        /// lifetime of the Vulkan device.
+        /// The allocation is scoped to the lifetime of the Vulkan device.
         /// </summary>
         Device = 3, 
         
         /// <summary>
-        /// VK_SYSTEM_ALLOCATION_SCOPE_INSTANCE - The allocation is scoped to
-        /// the lifetime of the Vulkan instance.
+        /// The allocation is scoped to the lifetime of the Vulkan instance.
         /// </summary>
         Instance = 4, 
     }

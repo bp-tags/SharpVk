@@ -56,13 +56,12 @@ namespace SharpVk
         public uint MipLevel; 
         
         /// <summary>
-        /// baseArrayLayer and layerCount are the starting layer and number of
-        /// layers to copy.
+        /// The starting layer to copy.
         /// </summary>
         public uint BaseArrayLayer; 
         
         /// <summary>
-        /// 
+        /// The number of layers to copy
         /// </summary>
         public uint LayerCount; 
     }

@@ -57,7 +57,7 @@ namespace SharpVk
         
         /// <summary>
         /// The unsigned integer count of meaningful bits in the timestamps
-        /// written via fname:vkCmdWriteTimestamp. The valid range for the
+        /// written via CommandBuffer.WriteTimestamp. The valid range for the
         /// count is 36..64 bits, or a value of 0, indicating no support for
         /// timestamps. Bits outside the valid range are guaranteed to be
         /// zeros.
