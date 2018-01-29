@@ -31,6 +31,11 @@ namespace SharpVk.Glfw
         /// A dictionary of hints to set before creating the window.
         /// </param>
         public Window(int width, int height, string title, Dictionary<WindowAttribute, int> windowHints = null)
+            : this(width, height, title, MonitorHandle.Zero, windowHints)
+        {
+        }
+
+        internal Window(int width, int height, string title, MonitorHandle monitor, Dictionary<WindowAttribute, int> windowHints)
         {
             try
             {
@@ -44,7 +49,7 @@ namespace SharpVk.Glfw
                     }
                 }
 
-                this.handle = Glfw3.CreateWindow(width, height, title, MonitorHandle.Zero, WindowHandle.Zero);
+                this.handle = Glfw3.CreateWindow(width, height, title, monitor, WindowHandle.Zero);
 
                 ErrorUtility.ThrowOnError();
             }
@@ -53,7 +58,7 @@ namespace SharpVk.Glfw
                 ErrorUtility.Unbind();
             }
         }
-
+        
         /// <summary>
         /// Returns the value of the close flag for this window.
         /// </summary>

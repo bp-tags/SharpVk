@@ -14,7 +14,7 @@ namespace SharpVk.Glfw
         }
 
         private IntPtr pointer;
-
+        
         /// <summary>
         /// Gets the VideoMode value at the referenced memory location.
         /// </summary>

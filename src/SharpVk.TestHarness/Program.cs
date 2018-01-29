@@ -1,6 +1,5 @@
 ﻿using SharpVk.Glfw;
 using System;
-using System.Text;
 
 namespace SharpVk
 {
@@ -17,7 +16,12 @@ namespace SharpVk
             {
                 Glfw3.Init();
 
-                Console.WriteLine(Glfw3.GetMonitorName(Glfw3.GetPrimaryMonitor()).Value);
+                var monitor = Monitor.GetPrimary();
+
+                foreach(var mode in monitor.GetVideoModes())
+                {
+                    Console.WriteLine(mode);
+                }
 
                 Console.ReadLine();
             }
