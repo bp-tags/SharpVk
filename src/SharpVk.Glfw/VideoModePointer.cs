@@ -4,15 +4,11 @@ using System.Runtime.InteropServices;
 namespace SharpVk.Glfw
 {
     /// <summary>
-    /// Wraps a pointer to a know struct instance.
+    /// Wraps a pointer to a VideoMode struct.
     /// </summary>
-    /// <typeparam name="T">
-    /// The type of struct referenced by the wrapped pointer.
-    /// </typeparam>
-    public struct Pointer<T>
-        where T : struct
+    public struct VideoModePointer
     {
-        internal Pointer(IntPtr pointer)
+        internal VideoModePointer(IntPtr pointer)
         {
             this.pointer = pointer;
         }
@@ -20,9 +16,9 @@ namespace SharpVk.Glfw
         private IntPtr pointer;
 
         /// <summary>
-        /// Gets the value at the referenced memory location.
+        /// Gets the VideoMode value at the referenced memory location.
         /// </summary>
-        public T Value => this.IsNull ? throw new NullReferenceException() : Marshal.PtrToStructure<T>(this.pointer);
+        public VideoMode Value => this.IsNull ? throw new NullReferenceException() : Marshal.PtrToStructure<VideoMode>(this.pointer);
 
         /// <summary>
         /// Gets a value indicating whether the pointer wrapped by this

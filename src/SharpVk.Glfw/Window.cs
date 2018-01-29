@@ -7,8 +7,11 @@ namespace SharpVk.Glfw
     /// Represents an instance of a GLFW3 Window.
     /// </summary>
     public class Window
+        : IDisposable
     {
         internal readonly WindowHandle handle;
+
+        private bool isDisposed;
 
         /// <summary>
         /// Creates a window and its associated OpenGL or OpenGL ES context.
@@ -25,24 +28,83 @@ namespace SharpVk.Glfw
         /// The initial window title.
         /// </param>
         /// <param name="windowHints">
-        /// The set of hints to set before creating the window.
+        /// A dictionary of hints to set before creating the window.
         /// </param>
         public Window(int width, int height, string title, Dictionary<WindowAttribute, int> windowHints = null)
         {
-            if (windowHints != null)
+            try
             {
-                foreach (var hintPair in windowHints)
-                {
-                    Glfw3.WindowHint(hintPair.Key, hintPair.Value);
-                }
-            }
+                ErrorUtility.Bind();
 
-            this.handle = Glfw3.CreateWindow(width, height, title, IntPtr.Zero, IntPtr.Zero);
+                if (windowHints != null)
+                {
+                    foreach (var hintPair in windowHints)
+                    {
+                        Glfw3.WindowHint(hintPair.Key, hintPair.Value);
+                    }
+                }
+
+                this.handle = Glfw3.CreateWindow(width, height, title, MonitorHandle.Zero, WindowHandle.Zero);
+
+                ErrorUtility.ThrowOnError();
+            }
+            finally
+            {
+                ErrorUtility.Unbind();
+            }
         }
 
         /// <summary>
         /// Returns the value of the close flag for this window.
         /// </summary>
-        public bool ShouldClose => Glfw3.WindowShouldClose(this.handle);
+        public bool ShouldClose
+        {
+            get
+            {
+                this.ThrowOnDisposed();
+
+                return Glfw3.WindowShouldClose(this.handle);
+            }
+        }
+
+        private void ThrowOnDisposed()
+        {
+            if (this.isDisposed)
+            {
+                throw new ObjectDisposedException(this.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Closes the window.
+        /// </summary>
+        public void Close()
+        {
+            if (!this.isDisposed)
+            {
+                try
+                {
+                    ErrorUtility.Bind();
+
+                    Glfw3.DestroyWindow(this.handle);
+
+                    this.isDisposed = true;
+
+                    ErrorUtility.ThrowOnError();
+                }
+                finally
+                {
+                    ErrorUtility.Unbind();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Releases all unmanaged resources associated with this window.
+        /// </summary>
+        public void Dispose()
+        {
+            this.Close();
+        }
     }
 }

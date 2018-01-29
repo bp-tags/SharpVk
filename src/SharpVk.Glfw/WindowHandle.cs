@@ -24,5 +24,11 @@ namespace SharpVk.Glfw
                 return this.handle;
             }
         }
+
+        /// <summary>
+        /// A read-only field that represents a WindowHandle that has been
+        /// inititalised to zero.
+        /// </summary>
+        public static readonly WindowHandle Zero = new WindowHandle(IntPtr.Zero);
     }
 }

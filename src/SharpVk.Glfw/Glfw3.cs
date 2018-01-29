@@ -34,11 +34,30 @@ namespace SharpVk.Glfw
         /// This function retrieves the major, minor and revision numbers of
         /// the GLFW library.
         /// </summary>
-        /// <param name="major">The major version number.</param>
-        /// <param name="minor">The minor version number.</param>
-        /// <param name="rev">The revision number.</param>
+        /// <param name="major">
+        /// The major version number.
+        /// </param>
+        /// <param name="minor">
+        /// The minor version number.
+        /// </param>
+        /// <param name="rev">
+        /// The revision number.
+        /// </param>
         [DllImport(GlfwDll, CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwGetVersion")]
         public static extern void GetVersion(out int major, out int minor, out int rev);
+
+
+        /// <summary>
+        /// Returns the compile-time generated version string of the GLFW
+        /// library binary. It describes the version, platform, compiler and
+        /// any platform-specific compile-time options.
+        /// </summary>
+        /// <returns>
+        /// The compile-time generated version string of the GLFW library
+        /// binary.
+        /// </returns>
+        [DllImport(GlfwDll, CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwGetVersionString")]
+        public static extern NativeString GetVersionString();
 
         /// <summary>
         /// Creates a window and its associated OpenGL or OpenGL ES context.
@@ -66,7 +85,17 @@ namespace SharpVk.Glfw
         /// The handle of the created window, or Null if an error occurred.
         /// </returns>
         [DllImport(GlfwDll, CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwCreateWindow")]
-        public static extern WindowHandle CreateWindow(int width, int height, [MarshalAs(UnmanagedType.LPStr)] string title, IntPtr monitor, IntPtr share);
+        public static extern WindowHandle CreateWindow(int width, int height, [MarshalAs(UnmanagedType.LPStr)] string title, MonitorHandle monitor, WindowHandle share);
+
+        /// <summary>
+        /// Destroys the specified window and its context. On calling this
+        /// function, no further callbacks will be called for that window.
+        /// </summary>
+        /// <param name="window">
+        /// The window to destroy.
+        /// </param>
+        [DllImport(GlfwDll, CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwDestroyWindow")]
+        public static extern void DestroyWindow(WindowHandle window);
 
         /// <summary>
         /// Processes events in the event queue and then returns immediately.
@@ -241,8 +270,7 @@ namespace SharpVk.Glfw
         /// The name of the monitor, or Null if an error occurred.
         /// </returns>
         [DllImport(GlfwDll, CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwGetMonitorName")]
-        [return: MarshalAs(UnmanagedType.LPStr)]
-        public static extern string GetMonitorName(MonitorHandle monitor);
+        public static extern NativeString GetMonitorName(MonitorHandle monitor);
 
         /// <summary>
         /// Sets the monitor configuration callback, or removes the currently
@@ -291,7 +319,7 @@ namespace SharpVk.Glfw
         /// an error occurred.
         /// </returns>
         [DllImport(GlfwDll, CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwGetVideoMode")]
-        public static extern Pointer<VideoMode> GetVideoMode(MonitorHandle monitor);
+        public static extern VideoModePointer GetVideoMode(MonitorHandle monitor);
 
         /// <summary>
         /// Generates a 256-element gamma ramp from the specified exponent and
