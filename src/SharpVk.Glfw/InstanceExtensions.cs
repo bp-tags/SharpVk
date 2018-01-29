@@ -3,15 +3,20 @@
 namespace SharpVk.Glfw
 {
     /// <summary>
-    /// 
+    /// Provides a set of static extensions for Vulkan Instances to support
+    /// GLFW3 surfaces.
     /// </summary>
     public static class InstanceExtensions
     {
         /// <summary>
         /// Create a Surface object for a GLFW3 window.
         /// </summary>
-        /// <param name="instance"></param>
-        /// <param name="windowHandle"></param>
+        /// <param name="instance">
+        /// The Vulkan instance to create the surface in.
+        /// </param>
+        /// <param name="windowHandle">
+        /// The window to create the surface for.
+        /// </param>
         /// <returns></returns>
         public unsafe static Surface CreateGlfw3Surface(this Instance instance, WindowHandle windowHandle)
         {
@@ -28,8 +33,12 @@ namespace SharpVk.Glfw
         /// <summary>
         /// Create a Surface object for a GLFW3 window.
         /// </summary>
-        /// <param name="instance"></param>
-        /// <param name="window"></param>
+        /// <param name="instance">
+        /// The Vulkan instance to create the surface in.
+        /// </param>
+        /// <param name="window">
+        /// The window to create the surface for.
+        /// </param>
         /// <returns></returns>
         public unsafe static Surface CreateGlfw3Surface(this Instance instance, Window window)
         {

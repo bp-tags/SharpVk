@@ -109,7 +109,7 @@ namespace SharpVk.VertexBuffers
             Glfw3.Init();
 
 
-            Glfw3.WindowHint(0x00022001, 0);
+            Glfw3.WindowHint(WindowAttribute.ClientApi, 0);
             this.window = Glfw3.CreateWindow(SurfaceWidth, SurfaceHeight, "Vulkan", IntPtr.Zero, IntPtr.Zero);
 
             Glfw3.SetWindowSizeCallback(this.window, (x, y, z) => this.RecreateSwapChain());
