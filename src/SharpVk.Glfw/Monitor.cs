@@ -11,17 +11,57 @@ namespace SharpVk.Glfw
     {
         internal readonly MonitorHandle handle;
 
-        internal Monitor(MonitorHandle handle)
+        /// <summary>
+        /// Creates a new instance of Monitor from a given monitor handle.
+        /// </summary>
+        /// <param name="handle">
+        /// The monitor handle to use.
+        /// </param>
+        public Monitor(MonitorHandle handle)
         {
             this.handle = handle;
         }
 
         /// <summary>
-        /// Returns a human-readable name for the monitor. The name typically
+        /// Gets a human-readable name for the monitor. The name typically
         /// reflects the make and model of the monitor and is not guaranteed
         /// to be unique among the connected monitors.
         /// </summary>
         public string Name => Glfw3.GetMonitorName(this.handle).Value;
+
+        /// <summary>
+        /// Gets the size, in millimetres, of the display area of the monitor.
+        /// </summary>
+        public (int Width, int Height) PhysicalSize
+        {
+            get
+            {
+                Glfw3.GetMonitorPhysicalSize(this.handle, out int width, out int height);
+
+                return (width, height);
+            }
+        }
+
+        /// <summary>
+        /// Gets the position, in screen coordinates, of the upper-left corner
+        /// of the specified monitor.
+        /// </summary>
+        public (int X, int Y) Position
+        {
+            get
+            {
+                Glfw3.GetMonitorPos(this.handle, out int x, out int y);
+
+                return (x, y);
+            }
+        }
+
+        /// <summary>
+        /// Gets the current video mode of the specified monitor. If you have
+        /// created a full screen window for that monitor, the return value
+        /// will depend on whether that window is iconified.
+        /// </summary>
+        public VideoMode CurrentVideoMode => Glfw3.GetVideoMode(this.handle).Value;
 
         /// <summary>
         /// Returns an array of all video modes supported by the specified
@@ -49,6 +89,16 @@ namespace SharpVk.Glfw
                 ErrorUtility.Unbind();
             }
         }
+
+        /// <summary>
+        /// Generates a 256-element gamma ramp from the specified exponent and
+        /// then calls glfwSetGammaRamp with it. The value must be a finite
+        /// number greater than zero.
+        /// </summary>
+        /// <param name="gamma">
+        /// The desired exponent.
+        /// </param>
+        public void SetGamma(float gamma) => Glfw3.SetGamma(this.handle, gamma);
 
         /// <summary>
         /// Creates a fullscreen window and its associated OpenGL or OpenGL ES
