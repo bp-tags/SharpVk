@@ -336,6 +336,26 @@ namespace SharpVk.Glfw
         public static extern void SetGamma(MonitorHandle monitor, float gamma);
 
         /// <summary>
+        /// Returns the localized name of the specified printable key. This is
+        /// intended for displaying key bindings to the user.
+        /// </summary>
+        /// <param name="key">
+        /// The key to query, or Key.Unknown.
+        /// </param>
+        /// <param name="scancode">
+        /// The scancode of the key to query, if key is Key.Unknown.
+        /// </param>
+        /// <returns>
+        /// The localized name of the key, or Null.
+        /// </returns>
+        [DllImport(GlfwDll, CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwGetKeyName")]
+        public static extern NativeString GetKeyName(Key key, int scancode);
+
+
+        [DllImport(GlfwDll, CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwGetKey")]
+        public static extern InputState GetKey(WindowHandle window, Key key);
+
+        /// <summary>
         /// Returns an array of names of Vulkan instance extensions required by
         /// GLFW for creating Vulkan surfaces for GLFW windows. If successful,
         /// the list will always contains VK_KHR_surface, so if you don't

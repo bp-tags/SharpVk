@@ -16,14 +16,13 @@ namespace SharpVk
             {
                 Glfw3.Init();
 
-                var monitor = Monitor.GetPrimary();
-
-                foreach(var mode in monitor.GetVideoModes())
+                using (var window = new Window(1024, 768, "Test"))
                 {
-                    Console.WriteLine(mode);
+                    while (window.GetKeyState(Key.Space) == InputState.Release)
+                    {
+                        Glfw3.PollEvents();
+                    }
                 }
-
-                Console.ReadLine();
             }
             catch (Exception ex)
             {

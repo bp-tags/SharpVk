@@ -41,5 +41,10 @@ namespace SharpVk.Glfw
         /// The underlying pointer wrapped by this instance.
         /// </summary>
         public IntPtr RawPointer => this.pointer;
+
+        public override string ToString()
+        {
+            return this.Value;
+        }
     }
 }

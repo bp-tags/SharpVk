@@ -1,8 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.4.3-dev</Version>
+    <Version>0.4.3-dev0004</Version>
     <Authors>FacticiusVir</Authors>
     <Company />
     <Product />
@@ -27,6 +28,10 @@
     <DefineConstants>TRACE;DEBUG;NETSTANDARD2_0</DefineConstants>
     <OutputPath>bin\Debug\netstandard2.0\</OutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MSBump" Version="2.3.2" PrivateAssets="All" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SharpVk\SharpVk.csproj" />

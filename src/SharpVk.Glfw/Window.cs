@@ -58,6 +58,24 @@ namespace SharpVk.Glfw
                 ErrorUtility.Unbind();
             }
         }
+
+        public InputState GetKeyState(Key key)
+        {
+            try
+            {
+                ErrorUtility.Bind();
+
+                InputState result = Glfw3.GetKey(this.handle, key);
+
+                ErrorUtility.ThrowOnError();
+
+                return result;
+            }
+            finally
+            {
+                ErrorUtility.Unbind();
+            }
+        }
         
         /// <summary>
         /// Returns the value of the close flag for this window.
@@ -111,5 +129,7 @@ namespace SharpVk.Glfw
         {
             this.Close();
         }
+
+        public WindowHandle RawHandle => this.handle;
     }
 }
