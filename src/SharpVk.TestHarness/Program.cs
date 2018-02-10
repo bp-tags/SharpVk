@@ -18,7 +18,7 @@ namespace SharpVk
 
                 using (var window = new Window(1024, 768, "Test"))
                 {
-                    while (window.GetKeyState(Key.Space) == InputState.Release)
+                    while (window.GetKeyState(Key.Space) == InputAction.Release)
                     {
                         Glfw3.PollEvents();
                     }

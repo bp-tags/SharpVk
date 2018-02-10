@@ -59,13 +59,13 @@ namespace SharpVk.Glfw
             }
         }
 
-        public InputState GetKeyState(Key key)
+        public InputAction GetKeyState(Key key)
         {
             try
             {
                 ErrorUtility.Bind();
 
-                InputState result = Glfw3.GetKey(this.handle, key);
+                InputAction result = Glfw3.GetKey(this.handle, key);
 
                 ErrorUtility.ThrowOnError();
 

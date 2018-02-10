@@ -1,6 +1,6 @@
 ﻿namespace SharpVk.Glfw
 {
-    public enum InputState
+    public enum InputAction
     {
         Release = 0,
         Press = 1,

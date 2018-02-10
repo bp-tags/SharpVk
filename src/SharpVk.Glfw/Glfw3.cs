@@ -350,11 +350,13 @@ namespace SharpVk.Glfw
         /// </returns>
         [DllImport(GlfwDll, CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwGetKeyName")]
         public static extern NativeString GetKeyName(Key key, int scancode);
-
-
+        
         [DllImport(GlfwDll, CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwGetKey")]
-        public static extern InputState GetKey(WindowHandle window, Key key);
-
+        public static extern InputAction GetKey(WindowHandle window, Key key);
+        
+        [DllImport(GlfwDll, CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwSetKeyCallback")]
+        public static extern KeyDelegate SetKeyCallback(WindowHandle window, KeyDelegate callback);
+        
         /// <summary>
         /// Returns an array of names of Vulkan instance extensions required by
         /// GLFW for creating Vulkan surfaces for GLFW windows. If successful,
